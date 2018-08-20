@@ -133,18 +133,23 @@
             // 
             // BRDcod
             // 
+            this.BRDcod.AutoCheck = false;
             this.BRDcod.AutoSize = true;
+            this.BRDcod.Checked = true;
             this.BRDcod.Location = new System.Drawing.Point(260, 76);
             this.BRDcod.Name = "BRDcod";
             this.BRDcod.Size = new System.Drawing.Size(73, 21);
             this.BRDcod.TabIndex = 8;
             this.BRDcod.TabStop = true;
             this.BRDcod.Text = "Código";
+            this.BRDcod.UseMnemonic = false;
             this.BRDcod.UseVisualStyleBackColor = true;
             // 
             // BRDnome
             // 
+            this.BRDnome.AutoCheck = false;
             this.BRDnome.AutoSize = true;
+            this.BRDnome.Checked = true;
             this.BRDnome.Location = new System.Drawing.Point(376, 78);
             this.BRDnome.Name = "BRDnome";
             this.BRDnome.Size = new System.Drawing.Size(66, 21);
@@ -155,7 +160,9 @@
             // 
             // BRDestoq
             // 
+            this.BRDestoq.AutoCheck = false;
             this.BRDestoq.AutoSize = true;
+            this.BRDestoq.Checked = true;
             this.BRDestoq.Location = new System.Drawing.Point(492, 76);
             this.BRDestoq.Name = "BRDestoq";
             this.BRDestoq.Size = new System.Drawing.Size(81, 21);
@@ -166,7 +173,9 @@
             // 
             // BRDbandej
             // 
+            this.BRDbandej.AutoCheck = false;
             this.BRDbandej.AutoSize = true;
+            this.BRDbandej.Checked = true;
             this.BRDbandej.Location = new System.Drawing.Point(608, 76);
             this.BRDbandej.Name = "BRDbandej";
             this.BRDbandej.Size = new System.Drawing.Size(81, 21);
@@ -177,7 +186,9 @@
             // 
             // BRDcorred
             // 
+            this.BRDcorred.AutoCheck = false;
             this.BRDcorred.AutoSize = true;
+            this.BRDcorred.Checked = true;
             this.BRDcorred.Location = new System.Drawing.Point(724, 76);
             this.BRDcorred.Name = "BRDcorred";
             this.BRDcorred.Size = new System.Drawing.Size(85, 21);
@@ -188,7 +199,9 @@
             // 
             // BRDpratel
             // 
+            this.BRDpratel.AutoCheck = false;
             this.BRDpratel.AutoSize = true;
+            this.BRDpratel.Checked = true;
             this.BRDpratel.Location = new System.Drawing.Point(840, 76);
             this.BRDpratel.Name = "BRDpratel";
             this.BRDpratel.Size = new System.Drawing.Size(90, 21);
