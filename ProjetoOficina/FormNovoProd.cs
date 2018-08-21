@@ -28,7 +28,7 @@ namespace ProjetoOficina
 
         private void BTNadd_Click(object sender, EventArgs e)
         {
-            
+            Projeto_Oficina.Produto novo = new Projeto_Oficina.Produto(TXTnome.ToString(), TXTcodigo.ToString(), TXTaplic.ToString(), int.Parse(TXTqtd.Text));
         }
     }
 }
