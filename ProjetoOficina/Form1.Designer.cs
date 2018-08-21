@@ -79,6 +79,7 @@
             this.BTNsair.TabIndex = 4;
             this.BTNsair.Text = "Sair";
             this.BTNsair.UseVisualStyleBackColor = true;
+            this.BTNsair.Click += new System.EventHandler(this.BTNsair_Click);
             // 
             // LBLproc
             // 
@@ -101,7 +102,7 @@
             // LBLnomeAplic
             // 
             this.LBLnomeAplic.AutoSize = true;
-            this.LBLnomeAplic.Location = new System.Drawing.Point(9, 386);
+            this.LBLnomeAplic.Location = new System.Drawing.Point(6, 571);
             this.LBLnomeAplic.Name = "LBLnomeAplic";
             this.LBLnomeAplic.Size = new System.Drawing.Size(69, 17);
             this.LBLnomeAplic.TabIndex = 6;
@@ -111,9 +112,9 @@
             // 
             this.LBLaplic.BackColor = System.Drawing.Color.LightGray;
             this.LBLaplic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LBLaplic.Location = new System.Drawing.Point(9, 403);
+            this.LBLaplic.Location = new System.Drawing.Point(9, 588);
             this.LBLaplic.Name = "LBLaplic";
-            this.LBLaplic.Size = new System.Drawing.Size(1467, 236);
+            this.LBLaplic.Size = new System.Drawing.Size(1412, 236);
             this.LBLaplic.TabIndex = 7;
             // 
             // CHKcod
@@ -182,15 +183,16 @@
             this.LSTestoq.GridLines = true;
             this.LSTestoq.Location = new System.Drawing.Point(9, 139);
             this.LSTestoq.Name = "LSTestoq";
-            this.LSTestoq.Size = new System.Drawing.Size(1467, 244);
+            this.LSTestoq.Size = new System.Drawing.Size(1412, 429);
             this.LSTestoq.TabIndex = 14;
             this.LSTestoq.UseCompatibleStateImageBehavior = false;
+            this.LSTestoq.Click += new System.EventHandler(this.LSTestoq_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1488, 648);
+            this.ClientSize = new System.Drawing.Size(1435, 833);
             this.Controls.Add(this.LSTestoq);
             this.Controls.Add(this.CHKpratel);
             this.Controls.Add(this.CHKcorred);
@@ -208,6 +210,7 @@
             this.Controls.Add(this.TXTproc);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
