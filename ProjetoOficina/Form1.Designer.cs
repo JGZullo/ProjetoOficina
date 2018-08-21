@@ -37,12 +37,12 @@
             this.LBLestoq = new System.Windows.Forms.Label();
             this.LBLnomeAplic = new System.Windows.Forms.Label();
             this.LBLaplic = new System.Windows.Forms.Label();
-            this.BRDcod = new System.Windows.Forms.RadioButton();
-            this.BRDnome = new System.Windows.Forms.RadioButton();
-            this.BRDestoq = new System.Windows.Forms.RadioButton();
-            this.BRDbandej = new System.Windows.Forms.RadioButton();
-            this.BRDcorred = new System.Windows.Forms.RadioButton();
-            this.BRDpratel = new System.Windows.Forms.RadioButton();
+            this.CHKcod = new System.Windows.Forms.CheckBox();
+            this.CHKnome = new System.Windows.Forms.CheckBox();
+            this.CHKqtd = new System.Windows.Forms.CheckBox();
+            this.CHKbandej = new System.Windows.Forms.CheckBox();
+            this.CHKcorred = new System.Windows.Forms.CheckBox();
+            this.CHKpratel = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // TXTproc
@@ -60,6 +60,7 @@
             this.BTNtudo.TabIndex = 1;
             this.BTNtudo.Text = "Mostrar tudo";
             this.BTNtudo.UseVisualStyleBackColor = true;
+            this.BTNtudo.Click += new System.EventHandler(this.BTNtudo_Click);
             // 
             // TBLestoq
             // 
@@ -131,96 +132,77 @@
             this.LBLaplic.Size = new System.Drawing.Size(1467, 236);
             this.LBLaplic.TabIndex = 7;
             // 
-            // BRDcod
+            // CHKcod
             // 
-            this.BRDcod.AutoCheck = false;
-            this.BRDcod.AutoSize = true;
-            this.BRDcod.Checked = true;
-            this.BRDcod.Location = new System.Drawing.Point(260, 76);
-            this.BRDcod.Name = "BRDcod";
-            this.BRDcod.Size = new System.Drawing.Size(73, 21);
-            this.BRDcod.TabIndex = 8;
-            this.BRDcod.TabStop = true;
-            this.BRDcod.Text = "Código";
-            this.BRDcod.UseMnemonic = false;
-            this.BRDcod.UseVisualStyleBackColor = true;
+            this.CHKcod.AutoSize = true;
+            this.CHKcod.Location = new System.Drawing.Point(262, 78);
+            this.CHKcod.Name = "CHKcod";
+            this.CHKcod.Size = new System.Drawing.Size(74, 21);
+            this.CHKcod.TabIndex = 8;
+            this.CHKcod.Text = "Código";
+            this.CHKcod.UseVisualStyleBackColor = true;
             // 
-            // BRDnome
+            // CHKnome
             // 
-            this.BRDnome.AutoCheck = false;
-            this.BRDnome.AutoSize = true;
-            this.BRDnome.Checked = true;
-            this.BRDnome.Location = new System.Drawing.Point(376, 78);
-            this.BRDnome.Name = "BRDnome";
-            this.BRDnome.Size = new System.Drawing.Size(66, 21);
-            this.BRDnome.TabIndex = 9;
-            this.BRDnome.TabStop = true;
-            this.BRDnome.Text = "Nome";
-            this.BRDnome.UseVisualStyleBackColor = true;
+            this.CHKnome.AutoSize = true;
+            this.CHKnome.Location = new System.Drawing.Point(366, 78);
+            this.CHKnome.Name = "CHKnome";
+            this.CHKnome.Size = new System.Drawing.Size(67, 21);
+            this.CHKnome.TabIndex = 9;
+            this.CHKnome.Text = "Nome";
+            this.CHKnome.UseVisualStyleBackColor = true;
             // 
-            // BRDestoq
+            // CHKqtd
             // 
-            this.BRDestoq.AutoCheck = false;
-            this.BRDestoq.AutoSize = true;
-            this.BRDestoq.Checked = true;
-            this.BRDestoq.Location = new System.Drawing.Point(492, 76);
-            this.BRDestoq.Name = "BRDestoq";
-            this.BRDestoq.Size = new System.Drawing.Size(81, 21);
-            this.BRDestoq.TabIndex = 10;
-            this.BRDestoq.TabStop = true;
-            this.BRDestoq.Text = "Estoque";
-            this.BRDestoq.UseVisualStyleBackColor = true;
+            this.CHKqtd.AutoSize = true;
+            this.CHKqtd.Location = new System.Drawing.Point(481, 78);
+            this.CHKqtd.Name = "CHKqtd";
+            this.CHKqtd.Size = new System.Drawing.Size(104, 21);
+            this.CHKqtd.TabIndex = 10;
+            this.CHKqtd.Text = "Quantidade";
+            this.CHKqtd.UseVisualStyleBackColor = true;
             // 
-            // BRDbandej
+            // CHKbandej
             // 
-            this.BRDbandej.AutoCheck = false;
-            this.BRDbandej.AutoSize = true;
-            this.BRDbandej.Checked = true;
-            this.BRDbandej.Location = new System.Drawing.Point(608, 76);
-            this.BRDbandej.Name = "BRDbandej";
-            this.BRDbandej.Size = new System.Drawing.Size(81, 21);
-            this.BRDbandej.TabIndex = 11;
-            this.BRDbandej.TabStop = true;
-            this.BRDbandej.Text = "Bandeja";
-            this.BRDbandej.UseVisualStyleBackColor = true;
+            this.CHKbandej.AutoSize = true;
+            this.CHKbandej.Location = new System.Drawing.Point(600, 78);
+            this.CHKbandej.Name = "CHKbandej";
+            this.CHKbandej.Size = new System.Drawing.Size(82, 21);
+            this.CHKbandej.TabIndex = 11;
+            this.CHKbandej.Text = "Bandeja";
+            this.CHKbandej.UseVisualStyleBackColor = true;
             // 
-            // BRDcorred
+            // CHKcorred
             // 
-            this.BRDcorred.AutoCheck = false;
-            this.BRDcorred.AutoSize = true;
-            this.BRDcorred.Checked = true;
-            this.BRDcorred.Location = new System.Drawing.Point(724, 76);
-            this.BRDcorred.Name = "BRDcorred";
-            this.BRDcorred.Size = new System.Drawing.Size(85, 21);
-            this.BRDcorred.TabIndex = 12;
-            this.BRDcorred.TabStop = true;
-            this.BRDcorred.Text = "Corredor";
-            this.BRDcorred.UseVisualStyleBackColor = true;
+            this.CHKcorred.AutoSize = true;
+            this.CHKcorred.Location = new System.Drawing.Point(726, 78);
+            this.CHKcorred.Name = "CHKcorred";
+            this.CHKcorred.Size = new System.Drawing.Size(86, 21);
+            this.CHKcorred.TabIndex = 12;
+            this.CHKcorred.Text = "Corredor";
+            this.CHKcorred.UseVisualStyleBackColor = true;
             // 
-            // BRDpratel
+            // CHKpratel
             // 
-            this.BRDpratel.AutoCheck = false;
-            this.BRDpratel.AutoSize = true;
-            this.BRDpratel.Checked = true;
-            this.BRDpratel.Location = new System.Drawing.Point(840, 76);
-            this.BRDpratel.Name = "BRDpratel";
-            this.BRDpratel.Size = new System.Drawing.Size(90, 21);
-            this.BRDpratel.TabIndex = 13;
-            this.BRDpratel.TabStop = true;
-            this.BRDpratel.Text = "Prateleira";
-            this.BRDpratel.UseVisualStyleBackColor = true;
+            this.CHKpratel.AutoSize = true;
+            this.CHKpratel.Location = new System.Drawing.Point(852, 78);
+            this.CHKpratel.Name = "CHKpratel";
+            this.CHKpratel.Size = new System.Drawing.Size(91, 21);
+            this.CHKpratel.TabIndex = 13;
+            this.CHKpratel.Text = "Prateleira";
+            this.CHKpratel.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1488, 648);
-            this.Controls.Add(this.BRDpratel);
-            this.Controls.Add(this.BRDcorred);
-            this.Controls.Add(this.BRDbandej);
-            this.Controls.Add(this.BRDestoq);
-            this.Controls.Add(this.BRDnome);
-            this.Controls.Add(this.BRDcod);
+            this.Controls.Add(this.CHKpratel);
+            this.Controls.Add(this.CHKcorred);
+            this.Controls.Add(this.CHKbandej);
+            this.Controls.Add(this.CHKqtd);
+            this.Controls.Add(this.CHKnome);
+            this.Controls.Add(this.CHKcod);
             this.Controls.Add(this.LBLaplic);
             this.Controls.Add(this.LBLnomeAplic);
             this.Controls.Add(this.LBLestoq);
@@ -248,12 +230,12 @@
         private System.Windows.Forms.Label LBLestoq;
         private System.Windows.Forms.Label LBLnomeAplic;
         private System.Windows.Forms.Label LBLaplic;
-        private System.Windows.Forms.RadioButton BRDcod;
-        private System.Windows.Forms.RadioButton BRDnome;
-        private System.Windows.Forms.RadioButton BRDestoq;
-        private System.Windows.Forms.RadioButton BRDbandej;
-        private System.Windows.Forms.RadioButton BRDcorred;
-        private System.Windows.Forms.RadioButton BRDpratel;
+        private System.Windows.Forms.CheckBox CHKcod;
+        private System.Windows.Forms.CheckBox CHKnome;
+        private System.Windows.Forms.CheckBox CHKqtd;
+        private System.Windows.Forms.CheckBox CHKbandej;
+        private System.Windows.Forms.CheckBox CHKcorred;
+        private System.Windows.Forms.CheckBox CHKpratel;
     }
 }
 
