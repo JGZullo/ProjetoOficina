@@ -47,16 +47,18 @@
             // 
             // TXTproc
             // 
-            this.TXTproc.Location = new System.Drawing.Point(262, 38);
+            this.TXTproc.Location = new System.Drawing.Point(196, 31);
+            this.TXTproc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TXTproc.Name = "TXTproc";
-            this.TXTproc.Size = new System.Drawing.Size(688, 22);
+            this.TXTproc.Size = new System.Drawing.Size(517, 20);
             this.TXTproc.TabIndex = 0;
             // 
             // BTNtudo
             // 
-            this.BTNtudo.Location = new System.Drawing.Point(1032, 18);
+            this.BTNtudo.Location = new System.Drawing.Point(774, 15);
+            this.BTNtudo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTNtudo.Name = "BTNtudo";
-            this.BTNtudo.Size = new System.Drawing.Size(104, 23);
+            this.BTNtudo.Size = new System.Drawing.Size(78, 19);
             this.BTNtudo.TabIndex = 1;
             this.BTNtudo.Text = "Mostrar tudo";
             this.BTNtudo.UseVisualStyleBackColor = true;
@@ -65,34 +67,38 @@
             // TBLestoq
             // 
             this.TBLestoq.ColumnCount = 6;
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 353F));
+            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 265F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.TBLestoq.Location = new System.Drawing.Point(12, 139);
+            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
+            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+            this.TBLestoq.Location = new System.Drawing.Point(9, 113);
+            this.TBLestoq.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TBLestoq.Name = "TBLestoq";
             this.TBLestoq.RowCount = 2;
             this.TBLestoq.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.34426F));
             this.TBLestoq.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.65574F));
-            this.TBLestoq.Size = new System.Drawing.Size(1464, 244);
+            this.TBLestoq.Size = new System.Drawing.Size(1098, 198);
             this.TBLestoq.TabIndex = 2;
             // 
             // BTNnovo
             // 
-            this.BTNnovo.Location = new System.Drawing.Point(1032, 47);
+            this.BTNnovo.Location = new System.Drawing.Point(774, 38);
+            this.BTNnovo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTNnovo.Name = "BTNnovo";
-            this.BTNnovo.Size = new System.Drawing.Size(104, 23);
+            this.BTNnovo.Size = new System.Drawing.Size(78, 19);
             this.BTNnovo.TabIndex = 3;
             this.BTNnovo.Text = "Novo";
             this.BTNnovo.UseVisualStyleBackColor = true;
+            this.BTNnovo.Click += new System.EventHandler(this.BTNnovo_Click);
             // 
             // BTNsair
             // 
-            this.BTNsair.Location = new System.Drawing.Point(1032, 76);
+            this.BTNsair.Location = new System.Drawing.Point(774, 62);
+            this.BTNsair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BTNsair.Name = "BTNsair";
-            this.BTNsair.Size = new System.Drawing.Size(104, 23);
+            this.BTNsair.Size = new System.Drawing.Size(78, 19);
             this.BTNsair.TabIndex = 4;
             this.BTNsair.Text = "Sair";
             this.BTNsair.UseVisualStyleBackColor = true;
@@ -100,44 +106,49 @@
             // LBLproc
             // 
             this.LBLproc.AutoSize = true;
-            this.LBLproc.Location = new System.Drawing.Point(259, 18);
+            this.LBLproc.Location = new System.Drawing.Point(194, 15);
+            this.LBLproc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLproc.Name = "LBLproc";
-            this.LBLproc.Size = new System.Drawing.Size(63, 17);
+            this.LBLproc.Size = new System.Drawing.Size(47, 13);
             this.LBLproc.TabIndex = 0;
             this.LBLproc.Text = "Procurar";
             // 
             // LBLestoq
             // 
             this.LBLestoq.AutoSize = true;
-            this.LBLestoq.Location = new System.Drawing.Point(9, 119);
+            this.LBLestoq.Location = new System.Drawing.Point(7, 97);
+            this.LBLestoq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLestoq.Name = "LBLestoq";
-            this.LBLestoq.Size = new System.Drawing.Size(60, 17);
+            this.LBLestoq.Size = new System.Drawing.Size(46, 13);
             this.LBLestoq.TabIndex = 5;
             this.LBLestoq.Text = "Estoque";
             // 
             // LBLnomeAplic
             // 
             this.LBLnomeAplic.AutoSize = true;
-            this.LBLnomeAplic.Location = new System.Drawing.Point(9, 386);
+            this.LBLnomeAplic.Location = new System.Drawing.Point(7, 314);
+            this.LBLnomeAplic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLnomeAplic.Name = "LBLnomeAplic";
-            this.LBLnomeAplic.Size = new System.Drawing.Size(69, 17);
+            this.LBLnomeAplic.Size = new System.Drawing.Size(54, 13);
             this.LBLnomeAplic.TabIndex = 6;
             this.LBLnomeAplic.Text = "Aplicação";
             // 
             // LBLaplic
             // 
             this.LBLaplic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LBLaplic.Location = new System.Drawing.Point(9, 403);
+            this.LBLaplic.Location = new System.Drawing.Point(7, 327);
+            this.LBLaplic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LBLaplic.Name = "LBLaplic";
-            this.LBLaplic.Size = new System.Drawing.Size(1467, 236);
+            this.LBLaplic.Size = new System.Drawing.Size(1100, 192);
             this.LBLaplic.TabIndex = 7;
             // 
             // CHKcod
             // 
             this.CHKcod.AutoSize = true;
-            this.CHKcod.Location = new System.Drawing.Point(262, 78);
+            this.CHKcod.Location = new System.Drawing.Point(196, 63);
+            this.CHKcod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CHKcod.Name = "CHKcod";
-            this.CHKcod.Size = new System.Drawing.Size(74, 21);
+            this.CHKcod.Size = new System.Drawing.Size(59, 17);
             this.CHKcod.TabIndex = 8;
             this.CHKcod.Text = "Código";
             this.CHKcod.UseVisualStyleBackColor = true;
@@ -145,9 +156,10 @@
             // CHKnome
             // 
             this.CHKnome.AutoSize = true;
-            this.CHKnome.Location = new System.Drawing.Point(366, 78);
+            this.CHKnome.Location = new System.Drawing.Point(274, 63);
+            this.CHKnome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CHKnome.Name = "CHKnome";
-            this.CHKnome.Size = new System.Drawing.Size(67, 21);
+            this.CHKnome.Size = new System.Drawing.Size(54, 17);
             this.CHKnome.TabIndex = 9;
             this.CHKnome.Text = "Nome";
             this.CHKnome.UseVisualStyleBackColor = true;
@@ -155,9 +167,10 @@
             // CHKqtd
             // 
             this.CHKqtd.AutoSize = true;
-            this.CHKqtd.Location = new System.Drawing.Point(481, 78);
+            this.CHKqtd.Location = new System.Drawing.Point(361, 63);
+            this.CHKqtd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CHKqtd.Name = "CHKqtd";
-            this.CHKqtd.Size = new System.Drawing.Size(104, 21);
+            this.CHKqtd.Size = new System.Drawing.Size(81, 17);
             this.CHKqtd.TabIndex = 10;
             this.CHKqtd.Text = "Quantidade";
             this.CHKqtd.UseVisualStyleBackColor = true;
@@ -165,9 +178,10 @@
             // CHKbandej
             // 
             this.CHKbandej.AutoSize = true;
-            this.CHKbandej.Location = new System.Drawing.Point(600, 78);
+            this.CHKbandej.Location = new System.Drawing.Point(450, 63);
+            this.CHKbandej.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CHKbandej.Name = "CHKbandej";
-            this.CHKbandej.Size = new System.Drawing.Size(82, 21);
+            this.CHKbandej.Size = new System.Drawing.Size(65, 17);
             this.CHKbandej.TabIndex = 11;
             this.CHKbandej.Text = "Bandeja";
             this.CHKbandej.UseVisualStyleBackColor = true;
@@ -175,9 +189,10 @@
             // CHKcorred
             // 
             this.CHKcorred.AutoSize = true;
-            this.CHKcorred.Location = new System.Drawing.Point(726, 78);
+            this.CHKcorred.Location = new System.Drawing.Point(544, 63);
+            this.CHKcorred.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CHKcorred.Name = "CHKcorred";
-            this.CHKcorred.Size = new System.Drawing.Size(86, 21);
+            this.CHKcorred.Size = new System.Drawing.Size(66, 17);
             this.CHKcorred.TabIndex = 12;
             this.CHKcorred.Text = "Corredor";
             this.CHKcorred.UseVisualStyleBackColor = true;
@@ -185,18 +200,19 @@
             // CHKpratel
             // 
             this.CHKpratel.AutoSize = true;
-            this.CHKpratel.Location = new System.Drawing.Point(852, 78);
+            this.CHKpratel.Location = new System.Drawing.Point(639, 63);
+            this.CHKpratel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CHKpratel.Name = "CHKpratel";
-            this.CHKpratel.Size = new System.Drawing.Size(91, 21);
+            this.CHKpratel.Size = new System.Drawing.Size(70, 17);
             this.CHKpratel.TabIndex = 13;
             this.CHKpratel.Text = "Prateleira";
             this.CHKpratel.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1488, 648);
+            this.ClientSize = new System.Drawing.Size(1028, 526);
             this.Controls.Add(this.CHKpratel);
             this.Controls.Add(this.CHKcorred);
             this.Controls.Add(this.CHKbandej);
@@ -212,6 +228,7 @@
             this.Controls.Add(this.TBLestoq);
             this.Controls.Add(this.BTNtudo);
             this.Controls.Add(this.TXTproc);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
