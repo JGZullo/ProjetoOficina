@@ -49,7 +49,6 @@ namespace ProjetoOficina
                 LSTestoq.Items.Add(item);
             }
 
-            
             reader.Close();
             cmd.Dispose();
             connection.Close();

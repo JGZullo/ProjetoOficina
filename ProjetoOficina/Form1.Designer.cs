@@ -180,6 +180,7 @@
             // LSTestoq
             // 
             this.LSTestoq.BackColor = System.Drawing.Color.LightGray;
+            this.LSTestoq.FullRowSelect = true;
             this.LSTestoq.GridLines = true;
             this.LSTestoq.Location = new System.Drawing.Point(9, 139);
             this.LSTestoq.Name = "LSTestoq";
