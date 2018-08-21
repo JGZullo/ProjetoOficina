@@ -28,9 +28,20 @@ namespace ProjetoOficina
             MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adap.Fill(ds);
-            TBLestoq.
+            
                 
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LSTestoq.View = View.Details;
+            LSTestoq.Columns.Add("Código", 110);
+            LSTestoq.Columns.Add("Nome", 230);
+            LSTestoq.Columns.Add("Quantidade", 110);
+            LSTestoq.Columns.Add("Bandeja", 230);
+            LSTestoq.Columns.Add("Corredor", 230);
+            LSTestoq.Columns.Add("Prateleira", 220);
         }
     }
 }

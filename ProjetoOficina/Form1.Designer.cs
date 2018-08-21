@@ -30,7 +30,6 @@
         {
             this.TXTproc = new System.Windows.Forms.TextBox();
             this.BTNtudo = new System.Windows.Forms.Button();
-            this.TBLestoq = new System.Windows.Forms.TableLayoutPanel();
             this.BTNnovo = new System.Windows.Forms.Button();
             this.BTNsair = new System.Windows.Forms.Button();
             this.LBLproc = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.CHKbandej = new System.Windows.Forms.CheckBox();
             this.CHKcorred = new System.Windows.Forms.CheckBox();
             this.CHKpratel = new System.Windows.Forms.CheckBox();
+            this.LSTestoq = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // TXTproc
@@ -61,23 +61,6 @@
             this.BTNtudo.Text = "Mostrar tudo";
             this.BTNtudo.UseVisualStyleBackColor = true;
             this.BTNtudo.Click += new System.EventHandler(this.BTNtudo_Click);
-            // 
-            // TBLestoq
-            // 
-            this.TBLestoq.ColumnCount = 6;
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 353F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 265F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.TBLestoq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.TBLestoq.Location = new System.Drawing.Point(12, 139);
-            this.TBLestoq.Name = "TBLestoq";
-            this.TBLestoq.RowCount = 2;
-            this.TBLestoq.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.34426F));
-            this.TBLestoq.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.65574F));
-            this.TBLestoq.Size = new System.Drawing.Size(1464, 244);
-            this.TBLestoq.TabIndex = 2;
             // 
             // BTNnovo
             // 
@@ -126,6 +109,7 @@
             // 
             // LBLaplic
             // 
+            this.LBLaplic.BackColor = System.Drawing.Color.LightGray;
             this.LBLaplic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.LBLaplic.Location = new System.Drawing.Point(9, 403);
             this.LBLaplic.Name = "LBLaplic";
@@ -192,11 +176,22 @@
             this.CHKpratel.Text = "Prateleira";
             this.CHKpratel.UseVisualStyleBackColor = true;
             // 
+            // LSTestoq
+            // 
+            this.LSTestoq.BackColor = System.Drawing.Color.LightGray;
+            this.LSTestoq.GridLines = true;
+            this.LSTestoq.Location = new System.Drawing.Point(9, 139);
+            this.LSTestoq.Name = "LSTestoq";
+            this.LSTestoq.Size = new System.Drawing.Size(1467, 244);
+            this.LSTestoq.TabIndex = 14;
+            this.LSTestoq.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1488, 648);
+            this.Controls.Add(this.LSTestoq);
             this.Controls.Add(this.CHKpratel);
             this.Controls.Add(this.CHKcorred);
             this.Controls.Add(this.CHKbandej);
@@ -209,11 +204,11 @@
             this.Controls.Add(this.LBLproc);
             this.Controls.Add(this.BTNsair);
             this.Controls.Add(this.BTNnovo);
-            this.Controls.Add(this.TBLestoq);
             this.Controls.Add(this.BTNtudo);
             this.Controls.Add(this.TXTproc);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,7 +218,6 @@
 
         private System.Windows.Forms.TextBox TXTproc;
         private System.Windows.Forms.Button BTNtudo;
-        private System.Windows.Forms.TableLayoutPanel TBLestoq;
         private System.Windows.Forms.Button BTNnovo;
         private System.Windows.Forms.Button BTNsair;
         private System.Windows.Forms.Label LBLproc;
@@ -236,6 +230,7 @@
         private System.Windows.Forms.CheckBox CHKbandej;
         private System.Windows.Forms.CheckBox CHKcorred;
         private System.Windows.Forms.CheckBox CHKpratel;
+        private System.Windows.Forms.ListView LSTestoq;
     }
 }
 
