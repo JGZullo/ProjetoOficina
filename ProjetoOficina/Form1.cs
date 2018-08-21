@@ -81,7 +81,16 @@ namespace ProjetoOficina
         private void LSTestoq_Click(object sender, EventArgs e)
         {
             ListViewItem item = LSTestoq.SelectedItems[0];
+            //label aplicação
             LBLaplic.Text = item.SubItems[6].Text;
+            //group box atualizar dados
+            TXTatzNome.Text = item.SubItems[0].Text;
+            TXTatzCod.Text = item.SubItems[1].Text;
+            TXTatzQtd.Text = item.SubItems[2].Text;
+            TXTatzBandej.Text = item.SubItems[3].Text;
+            TXTatzCorred.Text = item.SubItems[4].Text;
+            TXTatzPratel.Text = item.SubItems[5].Text;
+            TXTatzAplic.Text = item.SubItems[6].Text;
         }
     }
 }

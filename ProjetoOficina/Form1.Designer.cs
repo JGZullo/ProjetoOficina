@@ -45,17 +45,20 @@
             this.LSTestoq = new System.Windows.Forms.ListView();
             this.GRPatualizar = new System.Windows.Forms.GroupBox();
             this.LBLatzNome = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TXTatzNome = new System.Windows.Forms.TextBox();
             this.LBLatzCod = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TXTatzCod = new System.Windows.Forms.TextBox();
+            this.TXTatzBandej = new System.Windows.Forms.TextBox();
+            this.TXTatzCorred = new System.Windows.Forms.TextBox();
+            this.TXTatzPratel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TXTatzAplic = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TXTatzQtd = new System.Windows.Forms.TextBox();
             this.GRPatualizar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,18 +209,21 @@
             // GRPatualizar
             // 
             this.GRPatualizar.BackColor = System.Drawing.Color.LightGray;
-            this.GRPatualizar.Controls.Add(this.textBox6);
+            this.GRPatualizar.Controls.Add(this.TXTatzQtd);
+            this.GRPatualizar.Controls.Add(this.label2);
+            this.GRPatualizar.Controls.Add(this.button1);
+            this.GRPatualizar.Controls.Add(this.TXTatzAplic);
             this.GRPatualizar.Controls.Add(this.label1);
             this.GRPatualizar.Controls.Add(this.label5);
-            this.GRPatualizar.Controls.Add(this.textBox5);
+            this.GRPatualizar.Controls.Add(this.TXTatzPratel);
             this.GRPatualizar.Controls.Add(this.label4);
-            this.GRPatualizar.Controls.Add(this.textBox4);
-            this.GRPatualizar.Controls.Add(this.textBox3);
-            this.GRPatualizar.Controls.Add(this.textBox2);
+            this.GRPatualizar.Controls.Add(this.TXTatzCorred);
+            this.GRPatualizar.Controls.Add(this.TXTatzBandej);
+            this.GRPatualizar.Controls.Add(this.TXTatzCod);
             this.GRPatualizar.Controls.Add(this.LBLatzNome);
             this.GRPatualizar.Controls.Add(this.LBLatzCod);
             this.GRPatualizar.Controls.Add(this.label3);
-            this.GRPatualizar.Controls.Add(this.textBox1);
+            this.GRPatualizar.Controls.Add(this.TXTatzNome);
             this.GRPatualizar.Location = new System.Drawing.Point(1142, 139);
             this.GRPatualizar.Name = "GRPatualizar";
             this.GRPatualizar.Size = new System.Drawing.Size(279, 429);
@@ -234,17 +240,17 @@
             this.LBLatzNome.TabIndex = 16;
             this.LBLatzNome.Text = "Nome";
             // 
-            // textBox1
+            // TXTatzNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 22);
-            this.textBox1.TabIndex = 17;
+            this.TXTatzNome.Location = new System.Drawing.Point(6, 49);
+            this.TXTatzNome.Name = "TXTatzNome";
+            this.TXTatzNome.Size = new System.Drawing.Size(267, 22);
+            this.TXTatzNome.TabIndex = 17;
             // 
             // LBLatzCod
             // 
             this.LBLatzCod.AutoSize = true;
-            this.LBLatzCod.Location = new System.Drawing.Point(6, 87);
+            this.LBLatzCod.Location = new System.Drawing.Point(6, 74);
             this.LBLatzCod.Name = "LBLatzCod";
             this.LBLatzCod.Size = new System.Drawing.Size(52, 17);
             this.LBLatzCod.TabIndex = 18;
@@ -253,7 +259,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 145);
+            this.label3.Location = new System.Drawing.Point(6, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 17);
             this.label3.TabIndex = 19;
@@ -262,7 +268,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 198);
+            this.label4.Location = new System.Drawing.Point(6, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 20;
@@ -271,39 +277,39 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 248);
+            this.label5.Location = new System.Drawing.Point(6, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 17);
             this.label5.TabIndex = 21;
             this.label5.Text = "Prateleira";
             // 
-            // textBox2
+            // TXTatzCod
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 107);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(267, 22);
-            this.textBox2.TabIndex = 20;
+            this.TXTatzCod.Location = new System.Drawing.Point(6, 94);
+            this.TXTatzCod.Name = "TXTatzCod";
+            this.TXTatzCod.Size = new System.Drawing.Size(267, 22);
+            this.TXTatzCod.TabIndex = 20;
             // 
-            // textBox3
+            // TXTatzBandej
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 165);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(267, 22);
-            this.textBox3.TabIndex = 21;
+            this.TXTatzBandej.Location = new System.Drawing.Point(6, 187);
+            this.TXTatzBandej.Name = "TXTatzBandej";
+            this.TXTatzBandej.Size = new System.Drawing.Size(267, 22);
+            this.TXTatzBandej.TabIndex = 21;
             // 
-            // textBox4
+            // TXTatzCorred
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 218);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(267, 22);
-            this.textBox4.TabIndex = 22;
+            this.TXTatzCorred.Location = new System.Drawing.Point(6, 232);
+            this.TXTatzCorred.Name = "TXTatzCorred";
+            this.TXTatzCorred.Size = new System.Drawing.Size(267, 22);
+            this.TXTatzCorred.TabIndex = 22;
             // 
-            // textBox5
+            // TXTatzPratel
             // 
-            this.textBox5.Location = new System.Drawing.Point(6, 268);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(267, 22);
-            this.textBox5.TabIndex = 23;
+            this.TXTatzPratel.Location = new System.Drawing.Point(9, 277);
+            this.TXTatzPratel.Name = "TXTatzPratel";
+            this.TXTatzPratel.Size = new System.Drawing.Size(267, 22);
+            this.TXTatzPratel.TabIndex = 23;
             // 
             // label1
             // 
@@ -314,14 +320,39 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Aplicação";
             // 
-            // textBox6
+            // TXTatzAplic
             // 
-            this.textBox6.Location = new System.Drawing.Point(9, 322);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox6.Size = new System.Drawing.Size(264, 101);
-            this.textBox6.TabIndex = 25;
+            this.TXTatzAplic.Location = new System.Drawing.Point(6, 322);
+            this.TXTatzAplic.Multiline = true;
+            this.TXTatzAplic.Name = "TXTatzAplic";
+            this.TXTatzAplic.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TXTatzAplic.Size = new System.Drawing.Size(264, 101);
+            this.TXTatzAplic.TabIndex = 25;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(121, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 27);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Atualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 17);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Quantidade";
+            // 
+            // TXTatzQtd
+            // 
+            this.TXTatzQtd.Location = new System.Drawing.Point(6, 142);
+            this.TXTatzQtd.Name = "TXTatzQtd";
+            this.TXTatzQtd.Size = new System.Drawing.Size(267, 22);
+            this.TXTatzQtd.TabIndex = 27;
             // 
             // Form1
             // 
@@ -373,18 +404,21 @@
         private System.Windows.Forms.CheckBox CHKpratel;
         private System.Windows.Forms.ListView LSTestoq;
         private System.Windows.Forms.GroupBox GRPatualizar;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TXTatzAplic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TXTatzPratel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TXTatzCorred;
+        private System.Windows.Forms.TextBox TXTatzBandej;
+        private System.Windows.Forms.TextBox TXTatzCod;
         private System.Windows.Forms.Label LBLatzNome;
         private System.Windows.Forms.Label LBLatzCod;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXTatzNome;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TXTatzQtd;
+        private System.Windows.Forms.Label label2;
     }
 }
 
