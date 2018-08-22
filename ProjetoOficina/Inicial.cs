@@ -78,19 +78,21 @@ namespace ProjetoOficina
             this.Close();
         }
 
+        string atzNome; string atzCod; string atzQtd; string atzBandej; string atzCorred; string atzPratel; string atzAplic;
+
         private void LSTestoq_MouseClick(object sender, MouseEventArgs e)
         {
             ListViewItem item = LSTestoq.SelectedItems[0];
             //label aplicação
             LBLaplic.Text = item.SubItems[6].Text;
             //group box atualizar dados
-            TXTatzNome.Text = item.SubItems[0].Text;
-            TXTatzCod.Text = item.SubItems[1].Text;
-            TXTatzQtd.Text = item.SubItems[2].Text;
-            TXTatzBandej.Text = item.SubItems[3].Text;
-            TXTatzCorred.Text = item.SubItems[4].Text;
-            TXTatzPratel.Text = item.SubItems[5].Text;
-            TXTatzAplic.Text = item.SubItems[6].Text;
+            atzNome = TXTatzNome.Text = item.SubItems[0].Text;
+            atzCod = TXTatzCod.Text = item.SubItems[1].Text;
+            atzQtd = TXTatzQtd.Text = item.SubItems[2].Text;
+            atzBandej = TXTatzBandej.Text = item.SubItems[3].Text;
+            atzCorred = TXTatzCorred.Text = item.SubItems[4].Text;
+            atzPratel = TXTatzPratel.Text = item.SubItems[5].Text;
+            atzAplic = TXTatzAplic.Text = item.SubItems[6].Text;
         }
 
         private void BTNnovo_Click(object sender, EventArgs e)
@@ -105,6 +107,44 @@ namespace ProjetoOficina
             InicialAjuda FormInicialAjuda = new InicialAjuda();
             FormInicialAjuda.Owner = this;
             FormInicialAjuda.Show(); 
+        }
+
+        private void BTNatualizar_Click(object sender, EventArgs e)
+        {
+            DialogResult atualizar;
+            string msgDadosAtualizados = "";
+            if (!TXTatzNome.Text.Equals(atzNome))
+                msgDadosAtualizados += "Nome\n";
+            if (!TXTatzCod.Text.Equals(atzCod))
+                msgDadosAtualizados += "Código\n";
+            if (!TXTatzQtd.Text.Equals(atzQtd))
+                msgDadosAtualizados += "Quantidade\n";
+            if (!TXTatzBandej.Text.Equals(atzBandej))
+                msgDadosAtualizados += "Bandeja\n";
+            if (!TXTatzCorred.Text.Equals(atzCorred))
+                msgDadosAtualizados += "Corredor\n";
+            if (!TXTatzPratel.Text.Equals(atzPratel))
+                msgDadosAtualizados += "Prateleira\n";
+            if (!TXTatzAplic.Text.Equals(atzAplic))
+                msgDadosAtualizados += "Aplicação\n";
+
+            if (!msgDadosAtualizados.Equals(""))
+            {
+                atualizar = MessageBox.Show("Você irá atualizar os seguintes dados: \n" + msgDadosAtualizados +
+                                            "Deseja continuar?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (atualizar == DialogResult.Yes)
+                {
+                    //código para atualizar banco de dados vai aqui
+
+
+                    atualizar = MessageBox.Show("Os dados foram alterados com sucesso.", "Mensagem do Sistema", MessageBoxButtons.OK);
+                }
+                else
+                    atualizar = MessageBox.Show("Não houve alteração nos dados do produto.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+                atualizar = MessageBox.Show("Não houve alteração nos dados do produto.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            
         }
     }
 }

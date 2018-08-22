@@ -46,7 +46,7 @@
             this.GRPatualizar = new System.Windows.Forms.GroupBox();
             this.TXTatzQtd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BTNatualizar = new System.Windows.Forms.Button();
             this.TXTatzAplic = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -213,7 +213,7 @@
             this.GRPatualizar.BackColor = System.Drawing.Color.LightGray;
             this.GRPatualizar.Controls.Add(this.TXTatzQtd);
             this.GRPatualizar.Controls.Add(this.label2);
-            this.GRPatualizar.Controls.Add(this.button1);
+            this.GRPatualizar.Controls.Add(this.BTNatualizar);
             this.GRPatualizar.Controls.Add(this.TXTatzAplic);
             this.GRPatualizar.Controls.Add(this.label1);
             this.GRPatualizar.Controls.Add(this.label5);
@@ -249,14 +249,15 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Quantidade";
             // 
-            // button1
+            // BTNatualizar
             // 
-            this.button1.Location = new System.Drawing.Point(121, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 27);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Atualizar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BTNatualizar.Location = new System.Drawing.Point(121, 16);
+            this.BTNatualizar.Name = "BTNatualizar";
+            this.BTNatualizar.Size = new System.Drawing.Size(152, 27);
+            this.BTNatualizar.TabIndex = 16;
+            this.BTNatualizar.Text = "Atualizar";
+            this.BTNatualizar.UseVisualStyleBackColor = true;
+            this.BTNatualizar.Click += new System.EventHandler(this.BTNatualizar_Click);
             // 
             // TXTatzAplic
             // 
@@ -433,7 +434,7 @@
         private System.Windows.Forms.Label LBLatzCod;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TXTatzNome;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTNatualizar;
         private System.Windows.Forms.TextBox TXTatzQtd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel LBKajuda;
