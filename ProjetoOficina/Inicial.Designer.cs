@@ -133,7 +133,6 @@
             // 
             // LSTestoq
             // 
-            this.LSTestoq.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.LSTestoq.BackColor = System.Drawing.Color.LightGray;
             this.LSTestoq.FullRowSelect = true;
             this.LSTestoq.GridLines = true;
@@ -146,6 +145,7 @@
             this.LSTestoq.UseCompatibleStateImageBehavior = false;
             this.LSTestoq.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.LSTestoq_ColumnClick);
             this.LSTestoq.ItemActivate += new System.EventHandler(this.LSTestoq_ItemActivate);
+            this.LSTestoq.Leave += new System.EventHandler(this.LSTestoq_Leave);
             // 
             // GRPatualizar
             // 

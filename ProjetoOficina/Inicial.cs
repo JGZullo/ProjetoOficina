@@ -225,7 +225,7 @@ namespace ProjetoOficina
                             cmd.Dispose();
                             connection.Close();
 
-                            AtualizarTabelaLinha(item.SubItems[1].Text);
+                            AtualizarTabelaCompleta();
                             atualizar = MessageBox.Show("Os dados foram alterados com sucesso.\n" + sql, "Mensagem do Sistema", MessageBoxButtons.OK);
                         }
                         catch (Exception)
@@ -245,6 +245,7 @@ namespace ProjetoOficina
             else
             {
                 atualizar = MessageBox.Show("Selecione um produto da tabela 'Estoque' para atualizar.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
             }
         }
 
@@ -305,7 +306,6 @@ namespace ProjetoOficina
         {
             if (e.Column == lvwColumnSorter.SortColumn)
             {
-                // Reverse the current sort direction for this column.
                 if (lvwColumnSorter.Order == SortOrder.Ascending)
                 {
                     lvwColumnSorter.Order = SortOrder.Descending;
@@ -317,13 +317,20 @@ namespace ProjetoOficina
             }
             else
             {
-                // Set the column number that is to be sorted; default to ascending.
                 lvwColumnSorter.SortColumn = e.Column;
                 lvwColumnSorter.Order = SortOrder.Ascending;
             }
-
-            // Perform the sort with these new sort options.
+            
             this.LSTestoq.Sort();
+        }
+
+        private void LSTestoq_Leave(object sender, EventArgs e)
+        {
+            if (!GRPatualizar.ContainsFocus)
+            {
+                TXTatzNome.Clear(); TXTatzCod.Clear(); TXTatzQtd.Clear(); TXTatzBandej.Clear();
+                TXTatzCorred.Clear(); TXTatzPratel.Clear(); TXTatzAplic.Clear(); LBLaplic.Text = "";
+            }
         }
     }
 }
