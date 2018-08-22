@@ -14,16 +14,18 @@ namespace ProjetoOficina
     public partial class Inicial : Form
     {
 
-        private static string host = "localhost";
-        private static string database = "db";
-        private static string userId = "root";
-        private static string userPwd = "root";
-        private static string ConnectionString = "Server=" + host + 
+        protected static string host = "localhost";
+        protected static string database = "db";
+        protected static string userId = "root";
+        protected static string userPwd = "root";
+        protected static string ConnectionString = "Server=" + host + 
                                                  ";Database=" + database +
                                                  ";Uid=" + userId + ";Pwd=" + userPwd + ";";
         MySqlConnection connection;
         MySqlCommand cmd;
         MySqlDataReader reader;
+
+        private ListViewColumnSorter lvwColumnSorter;
 
         public Inicial()
         {
@@ -46,6 +48,9 @@ namespace ProjetoOficina
             LSTestoq.Columns.Add("Prateleira", 80);
             AtualizarTabelaCompleta();
             BTNtudo.Focus();
+
+            lvwColumnSorter = new ListViewColumnSorter();
+            LSTestoq.ListViewItemSorter = lvwColumnSorter;
         }
 
         private void AtualizarTabelaCompleta()
@@ -294,6 +299,31 @@ namespace ProjetoOficina
             atzCorred = TXTatzCorred.Text = item.SubItems[4].Text;
             atzPratel = TXTatzPratel.Text = item.SubItems[5].Text;
             atzAplic = TXTatzAplic.Text = item.SubItems[6].Text;
+        }
+
+        private void LSTestoq_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if (e.Column == lvwColumnSorter.SortColumn)
+            {
+                // Reverse the current sort direction for this column.
+                if (lvwColumnSorter.Order == SortOrder.Ascending)
+                {
+                    lvwColumnSorter.Order = SortOrder.Descending;
+                }
+                else
+                {
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+            }
+            else
+            {
+                // Set the column number that is to be sorted; default to ascending.
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
+
+            // Perform the sort with these new sort options.
+            this.LSTestoq.Sort();
         }
     }
 }

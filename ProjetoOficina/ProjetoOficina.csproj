@@ -59,6 +59,7 @@
     <Compile Include="InicialAjuda.Designer.cs">
       <DependentUpon>InicialAjuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="Novo.cs">
       <SubType>Form</SubType>
     </Compile>
