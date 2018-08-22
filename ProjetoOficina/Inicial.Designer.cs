@@ -37,7 +37,6 @@
             this.LBLnomeAplic = new System.Windows.Forms.Label();
             this.LBLaplic = new System.Windows.Forms.Label();
             this.CHKcod = new System.Windows.Forms.CheckBox();
-            this.CHKnome = new System.Windows.Forms.CheckBox();
             this.CHKqtd = new System.Windows.Forms.CheckBox();
             this.CHKbandej = new System.Windows.Forms.CheckBox();
             this.CHKcorred = new System.Windows.Forms.CheckBox();
@@ -60,6 +59,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TXTatzNome = new System.Windows.Forms.TextBox();
             this.LBKajuda = new System.Windows.Forms.LinkLabel();
+            this.CHKaplic = new System.Windows.Forms.CheckBox();
+            this.CHKnome = new System.Windows.Forms.CheckBox();
             this.GRPatualizar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,72 +143,65 @@
             this.CHKcod.AutoSize = true;
             this.CHKcod.Checked = true;
             this.CHKcod.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHKcod.Location = new System.Drawing.Point(359, 78);
+            this.CHKcod.Location = new System.Drawing.Point(342, 78);
             this.CHKcod.Name = "CHKcod";
             this.CHKcod.Size = new System.Drawing.Size(74, 21);
             this.CHKcod.TabIndex = 8;
             this.CHKcod.Text = "Código";
             this.CHKcod.UseVisualStyleBackColor = true;
-            // 
-            // CHKnome
-            // 
-            this.CHKnome.AutoSize = true;
-            this.CHKnome.Checked = true;
-            this.CHKnome.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHKnome.Location = new System.Drawing.Point(262, 78);
-            this.CHKnome.Name = "CHKnome";
-            this.CHKnome.Size = new System.Drawing.Size(67, 21);
-            this.CHKnome.TabIndex = 9;
-            this.CHKnome.Text = "Nome";
-            this.CHKnome.UseVisualStyleBackColor = true;
+            this.CHKcod.CheckedChanged += new System.EventHandler(this.CHKcod_CheckedChanged);
             // 
             // CHKqtd
             // 
             this.CHKqtd.AutoSize = true;
             this.CHKqtd.Checked = true;
             this.CHKqtd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHKqtd.Location = new System.Drawing.Point(457, 78);
+            this.CHKqtd.Location = new System.Drawing.Point(426, 79);
             this.CHKqtd.Name = "CHKqtd";
             this.CHKqtd.Size = new System.Drawing.Size(104, 21);
             this.CHKqtd.TabIndex = 10;
             this.CHKqtd.Text = "Quantidade";
             this.CHKqtd.UseVisualStyleBackColor = true;
+            this.CHKqtd.CheckedChanged += new System.EventHandler(this.CHKqtd_CheckedChanged);
             // 
             // CHKbandej
             // 
             this.CHKbandej.AutoSize = true;
             this.CHKbandej.Checked = true;
             this.CHKbandej.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHKbandej.Location = new System.Drawing.Point(580, 78);
+            this.CHKbandej.Location = new System.Drawing.Point(540, 79);
             this.CHKbandej.Name = "CHKbandej";
             this.CHKbandej.Size = new System.Drawing.Size(82, 21);
             this.CHKbandej.TabIndex = 11;
             this.CHKbandej.Text = "Bandeja";
             this.CHKbandej.UseVisualStyleBackColor = true;
+            this.CHKbandej.CheckedChanged += new System.EventHandler(this.CHKbandej_CheckedChanged);
             // 
             // CHKcorred
             // 
             this.CHKcorred.AutoSize = true;
             this.CHKcorred.Checked = true;
             this.CHKcorred.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHKcorred.Location = new System.Drawing.Point(684, 78);
+            this.CHKcorred.Location = new System.Drawing.Point(639, 78);
             this.CHKcorred.Name = "CHKcorred";
             this.CHKcorred.Size = new System.Drawing.Size(86, 21);
             this.CHKcorred.TabIndex = 12;
             this.CHKcorred.Text = "Corredor";
             this.CHKcorred.UseVisualStyleBackColor = true;
+            this.CHKcorred.CheckedChanged += new System.EventHandler(this.CHKcorred_CheckedChanged);
             // 
             // CHKpratel
             // 
             this.CHKpratel.AutoSize = true;
             this.CHKpratel.Checked = true;
             this.CHKpratel.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHKpratel.Location = new System.Drawing.Point(804, 78);
+            this.CHKpratel.Location = new System.Drawing.Point(743, 78);
             this.CHKpratel.Name = "CHKpratel";
             this.CHKpratel.Size = new System.Drawing.Size(91, 21);
             this.CHKpratel.TabIndex = 13;
             this.CHKpratel.Text = "Prateleira";
             this.CHKpratel.UseVisualStyleBackColor = true;
+            this.CHKpratel.CheckedChanged += new System.EventHandler(this.CHKpratel_CheckedChanged);
             // 
             // LSTestoq
             // 
@@ -383,11 +377,38 @@
             this.LBKajuda.Text = "Ajuda";
             this.LBKajuda.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LBKajuda_LinkClicked);
             // 
+            // CHKaplic
+            // 
+            this.CHKaplic.AutoSize = true;
+            this.CHKaplic.Checked = true;
+            this.CHKaplic.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CHKaplic.Location = new System.Drawing.Point(859, 78);
+            this.CHKaplic.Name = "CHKaplic";
+            this.CHKaplic.Size = new System.Drawing.Size(91, 21);
+            this.CHKaplic.TabIndex = 17;
+            this.CHKaplic.Text = "Aplicação";
+            this.CHKaplic.UseVisualStyleBackColor = true;
+            this.CHKaplic.CheckedChanged += new System.EventHandler(this.CHKaplic_CheckedChanged);
+            // 
+            // CHKnome
+            // 
+            this.CHKnome.AutoSize = true;
+            this.CHKnome.Checked = true;
+            this.CHKnome.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CHKnome.Location = new System.Drawing.Point(262, 78);
+            this.CHKnome.Name = "CHKnome";
+            this.CHKnome.Size = new System.Drawing.Size(67, 21);
+            this.CHKnome.TabIndex = 9;
+            this.CHKnome.Text = "Nome";
+            this.CHKnome.UseVisualStyleBackColor = true;
+            this.CHKnome.CheckedChanged += new System.EventHandler(this.CHKnome_CheckedChanged);
+            // 
             // Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1435, 833);
+            this.Controls.Add(this.CHKaplic);
             this.Controls.Add(this.LBKajuda);
             this.Controls.Add(this.GRPatualizar);
             this.Controls.Add(this.LSTestoq);
@@ -430,7 +451,6 @@
         private System.Windows.Forms.Label LBLnomeAplic;
         private System.Windows.Forms.Label LBLaplic;
         private System.Windows.Forms.CheckBox CHKcod;
-        private System.Windows.Forms.CheckBox CHKnome;
         private System.Windows.Forms.CheckBox CHKqtd;
         private System.Windows.Forms.CheckBox CHKbandej;
         private System.Windows.Forms.CheckBox CHKcorred;
@@ -453,6 +473,8 @@
         private System.Windows.Forms.TextBox TXTatzQtd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel LBKajuda;
+        private System.Windows.Forms.CheckBox CHKaplic;
+        private System.Windows.Forms.CheckBox CHKnome;
     }
 }
 

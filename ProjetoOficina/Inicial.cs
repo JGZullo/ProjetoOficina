@@ -21,6 +21,7 @@ namespace ProjetoOficina
         private static string ConnectionString = "Server=" + host + 
                                                  ";Database=" + database +
                                                  ";Uid=" + userId + ";Pwd=" + userPwd + ";";
+        string sql;
         MySqlConnection connection;
         MySqlCommand cmd;
         MySqlDataReader reader;
@@ -53,7 +54,7 @@ namespace ProjetoOficina
             connection = new MySqlConnection(ConnectionString);
             connection.Open();
 
-            string sql = "SELECT * FROM estoque";
+            sql = "SELECT * FROM estoque";
             cmd = new MySqlCommand(sql, connection);
             reader = cmd.ExecuteReader();
 
@@ -81,7 +82,7 @@ namespace ProjetoOficina
             connection = new MySqlConnection(ConnectionString);
             connection.Open();
 
-            string sql = "SELECT * FROM estoque WHERE codigo= '" + primaryKey + "';";
+            sql = "SELECT * FROM estoque WHERE codigo= '" + primaryKey + "';";
             cmd = new MySqlCommand(sql, connection);
             reader = cmd.ExecuteReader();
 
@@ -211,7 +212,7 @@ namespace ProjetoOficina
                         item = LSTestoq.SelectedItems[0];
                         connection = new MySqlConnection(ConnectionString);
                         connection.Open();
-                        string sql = "UPDATE estoque SET " + dadosSql + " WHERE codigo= '" + item.SubItems[1].Text + "';";
+                        sql = "UPDATE estoque SET " + dadosSql + " WHERE codigo= '" + item.SubItems[1].Text + "';";
                         cmd = new MySqlCommand(sql, connection);
                         try
                         {
@@ -227,9 +228,6 @@ namespace ProjetoOficina
                         {
                             atualizar = MessageBox.Show("Não houve alteração nos dados do produto.\nMotivo: já existe um produto cadastrado com o código inserido.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
-
-
-                        
                     }
                     else
                         atualizar = MessageBox.Show("Não houve alteração nos dados do produto.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -243,14 +241,45 @@ namespace ProjetoOficina
             }
         }
 
+        private void resetarComando()
+        {
+            sql = "";
+        }
+
         private void TXTproc_TextChanged(object sender, EventArgs e)
         {
             connection = new MySqlConnection(ConnectionString);
             connection.Open();
+            sql = "SELECT * FROM estoque WHERE ";
+            if (CHKnome.Checked)  sql += "nome LIKE '%" + TXTproc.Text + "%'";
 
-            string sql = "SELECT * FROM estoque WHERE nome LIKE '%" + TXTproc.Text + "%' OR codigo LIKE '%" + TXTproc.Text
-                         + "%' OR bandeja LIKE '%" + TXTproc.Text + "%' OR corredor LIKE '%" + TXTproc.Text + "%' OR prateleira LIKE '%" 
-                         + TXTproc.Text + "%' OR aplicacao LIKE '%" + TXTproc.Text + "%';";
+            if (!sql.Equals("SELECT * FROM estoque WHERE ")) sql += " OR ";
+
+            if (CHKcod.Checked)  sql += "codigo LIKE '%" + TXTproc.Text + "%'";
+
+            if (!sql.Equals("SELECT * FROM estoque WHERE ")) sql += " OR ";
+                
+            if (CHKqtd.Checked) sql += "quantidade LIKE '%" + TXTproc.Text + "%'";
+
+            if (!sql.Equals("SELECT * FROM estoque WHERE ")) sql += " OR ";
+            
+            if (CHKbandej.Checked) sql += "bandeja LIKE '%" + TXTproc.Text + "%'";
+
+            if (!sql.Equals("SELECT * FROM estoque WHERE ")) sql += " OR ";
+            
+            if (CHKcorred.Checked) sql += "corredor LIKE '%" + TXTproc.Text + "%'";
+
+            if (!sql.Equals("SELECT * FROM estoque WHERE ")) sql += " OR ";
+            
+            if (CHKpratel.Checked) sql += "prateleira LIKE '%" + TXTproc.Text + "%'";
+
+            if (!sql.Equals("SELECT * FROM estoque WHERE ")) sql += " OR ";
+            
+            if (CHKaplic.Checked) sql += "aplicacao LIKE '%" + TXTproc.Text + "%'";
+
+            if (sql.EndsWith(" OR ")) sql.Remove(sql.Length - 4, 4);
+
+            sql += ";";
             cmd = new MySqlCommand(sql, connection);
             reader = cmd.ExecuteReader();
 
@@ -276,6 +305,8 @@ namespace ProjetoOficina
 
             TXTproc.Focus();
 
+            LBLaplic.Text = sql;
+            sql = "SELECT * FROM estoque WHERE ";
             reader.Close();
             cmd.Dispose();
             connection.Close();
@@ -294,6 +325,41 @@ namespace ProjetoOficina
             atzCorred = TXTatzCorred.Text = item.SubItems[4].Text;
             atzPratel = TXTatzPratel.Text = item.SubItems[5].Text;
             atzAplic = TXTatzAplic.Text = item.SubItems[6].Text;
+        }
+
+        private void CHKnome_CheckedChanged(object sender, EventArgs e)
+        {
+            resetarComando();
+        }
+
+        private void CHKcod_CheckedChanged(object sender, EventArgs e)
+        {
+            resetarComando();
+        }
+
+        private void CHKqtd_CheckedChanged(object sender, EventArgs e)
+        {
+            resetarComando();
+        }
+
+        private void CHKbandej_CheckedChanged(object sender, EventArgs e)
+        {
+            resetarComando();
+        }
+
+        private void CHKcorred_CheckedChanged(object sender, EventArgs e)
+        {
+            resetarComando();
+        }
+
+        private void CHKpratel_CheckedChanged(object sender, EventArgs e)
+        {
+            resetarComando();
+        }
+
+        private void CHKaplic_CheckedChanged(object sender, EventArgs e)
+        {
+            resetarComando();
         }
     }
 }
