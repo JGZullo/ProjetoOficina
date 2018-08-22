@@ -69,9 +69,7 @@
             this.TXTproc.Name = "TXTproc";
             this.TXTproc.Size = new System.Drawing.Size(688, 22);
             this.TXTproc.TabIndex = 0;
-            this.TXTproc.Click += new System.EventHandler(this.TXTproc_Click);
             this.TXTproc.TextChanged += new System.EventHandler(this.TXTproc_TextChanged);
-            this.TXTproc.Leave += new System.EventHandler(this.TXTproc_Leave);
             // 
             // BTNtudo
             // 
@@ -216,13 +214,14 @@
             this.LSTestoq.BackColor = System.Drawing.Color.LightGray;
             this.LSTestoq.FullRowSelect = true;
             this.LSTestoq.GridLines = true;
+            this.LSTestoq.HideSelection = false;
             this.LSTestoq.Location = new System.Drawing.Point(9, 139);
             this.LSTestoq.Name = "LSTestoq";
             this.LSTestoq.Size = new System.Drawing.Size(1127, 429);
             this.LSTestoq.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.LSTestoq.TabIndex = 14;
             this.LSTestoq.UseCompatibleStateImageBehavior = false;
-            this.LSTestoq.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LSTestoq_MouseClick);
+            this.LSTestoq.ItemActivate += new System.EventHandler(this.LSTestoq_ItemActivate);
             // 
             // GRPatualizar
             // 

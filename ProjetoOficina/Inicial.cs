@@ -21,6 +21,9 @@ namespace ProjetoOficina
         private static string ConnectionString = "Server=" + host + 
                                                  ";Database=" + database +
                                                  ";Uid=" + userId + ";Pwd=" + userPwd + ";";
+        MySqlConnection connection;
+        MySqlCommand cmd;
+        MySqlDataReader reader;
 
         public Inicial()
         {
@@ -42,16 +45,17 @@ namespace ProjetoOficina
             LSTestoq.Columns.Add("Corredor", 80);
             LSTestoq.Columns.Add("Prateleira", 80);
             AtualizarTabelaCompleta();
+            BTNtudo.Focus();
         }
 
         private void AtualizarTabelaCompleta()
         {
-            MySqlConnection connection = new MySqlConnection(ConnectionString);
+            connection = new MySqlConnection(ConnectionString);
             connection.Open();
 
             string sql = "SELECT * FROM estoque";
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            cmd = new MySqlCommand(sql, connection);
+            reader = cmd.ExecuteReader();
 
             LSTestoq.Items.Clear();
             while (reader.Read())
@@ -74,12 +78,12 @@ namespace ProjetoOficina
         private void AtualizarTabelaLinha(string primaryKey)
         {
             LSTestoq.Items.RemoveByKey(primaryKey);
-            MySqlConnection connection = new MySqlConnection(ConnectionString);
+            connection = new MySqlConnection(ConnectionString);
             connection.Open();
 
             string sql = "SELECT * FROM estoque WHERE codigo= '" + primaryKey + "';";
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            cmd = new MySqlCommand(sql, connection);
+            reader = cmd.ExecuteReader();
 
             LSTestoq.Items.Clear();
             while (reader.Read())
@@ -116,21 +120,6 @@ namespace ProjetoOficina
         string atzNome = ""; string atzCod = ""; string atzQtd = ""; string atzBandej = "";
         string atzCorred = ""; string atzPratel = ""; string atzAplic = "";
         ListViewItem item;
-
-        private void LSTestoq_MouseClick(object sender, MouseEventArgs e)
-        {
-            item = LSTestoq.SelectedItems[0];
-            //label aplicação
-            LBLaplic.Text = item.SubItems[6].Text;
-            //group box atualizar dados
-            atzNome = TXTatzNome.Text = item.SubItems[0].Text;
-            atzCod = TXTatzCod.Text = item.SubItems[1].Text;
-            atzQtd = TXTatzQtd.Text = item.SubItems[2].Text;
-            atzBandej = TXTatzBandej.Text = item.SubItems[3].Text;
-            atzCorred = TXTatzCorred.Text = item.SubItems[4].Text;
-            atzPratel = TXTatzPratel.Text = item.SubItems[5].Text;
-            atzAplic = TXTatzAplic.Text = item.SubItems[6].Text;
-        }
 
         private void BTNnovo_Click(object sender, EventArgs e)
         {
@@ -220,18 +209,27 @@ namespace ProjetoOficina
                     if (atualizar == DialogResult.Yes)
                     {
                         item = LSTestoq.SelectedItems[0];
-                        MySqlConnection connection = new MySqlConnection(ConnectionString);
+                        connection = new MySqlConnection(ConnectionString);
                         connection.Open();
                         string sql = "UPDATE estoque SET " + dadosSql + " WHERE codigo= '" + item.SubItems[1].Text + "';";
-                        MySqlCommand cmd = new MySqlCommand(sql, connection);
-                        MySqlDataReader reader = cmd.ExecuteReader();
+                        cmd = new MySqlCommand(sql, connection);
+                        try
+                        {
+                            reader = cmd.ExecuteReader();
+                            reader.Close();
+                            cmd.Dispose();
+                            connection.Close();
 
-                        reader.Close();
-                        cmd.Dispose();
-                        connection.Close();
+                            AtualizarTabelaLinha(item.SubItems[1].Text);
+                            atualizar = MessageBox.Show("Os dados foram alterados com sucesso.\n" + sql, "Mensagem do Sistema", MessageBoxButtons.OK);
+                        }
+                        catch (Exception)
+                        {
+                            atualizar = MessageBox.Show("Não houve alteração nos dados do produto.\nMotivo: já existe um produto cadastrado com o código inserido.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
 
-                        AtualizarTabelaLinha(item.SubItems[1].Text);
-                        atualizar = MessageBox.Show("Os dados foram alterados com sucesso.\n" + sql, "Mensagem do Sistema", MessageBoxButtons.OK);
+
+                        
                     }
                     else
                         atualizar = MessageBox.Show("Não houve alteração nos dados do produto.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -245,19 +243,57 @@ namespace ProjetoOficina
             }
         }
 
-        private void TXTproc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TXTproc_Leave(object sender, EventArgs e)
-        {
-
-        }
-
         private void TXTproc_TextChanged(object sender, EventArgs e)
         {
+            connection = new MySqlConnection(ConnectionString);
+            connection.Open();
 
+            string sql = "SELECT * FROM estoque WHERE nome LIKE '%" + TXTproc.Text + "%' OR codigo LIKE '%" + TXTproc.Text
+                         + "%' OR bandeja LIKE '%" + TXTproc.Text + "%' OR corredor LIKE '%" + TXTproc.Text + "%' OR prateleira LIKE '%" 
+                         + TXTproc.Text + "%' OR aplicacao LIKE '%" + TXTproc.Text + "%';";
+            cmd = new MySqlCommand(sql, connection);
+            reader = cmd.ExecuteReader();
+
+            LSTestoq.Items.Clear();
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader.GetString(0));
+                item.SubItems.Add(reader.GetString(1));
+                item.SubItems.Add(reader.GetInt32(2).ToString());
+                item.SubItems.Add(reader.GetString(3));
+                item.SubItems.Add(reader.GetString(4));
+                item.SubItems.Add(reader.GetString(5));
+                item.SubItems.Add(reader.GetString(6));
+                LSTestoq.Items.Add(item);
+            }
+
+            try
+            {
+                LSTestoq.Items[0].Selected = true;
+                LSTestoq.Focus();
+                LSTestoq.Select();
+            }catch (Exception) { }
+
+            TXTproc.Focus();
+
+            reader.Close();
+            cmd.Dispose();
+            connection.Close();
+        }
+
+        private void LSTestoq_ItemActivate(object sender, EventArgs e)
+        {
+            item = LSTestoq.SelectedItems[0];
+            //label aplicação
+            LBLaplic.Text = item.SubItems[6].Text;
+            //group box atualizar dados
+            atzNome = TXTatzNome.Text = item.SubItems[0].Text;
+            atzCod = TXTatzCod.Text = item.SubItems[1].Text;
+            atzQtd = TXTatzQtd.Text = item.SubItems[2].Text;
+            atzBandej = TXTatzBandej.Text = item.SubItems[3].Text;
+            atzCorred = TXTatzCorred.Text = item.SubItems[4].Text;
+            atzPratel = TXTatzPratel.Text = item.SubItems[5].Text;
+            atzAplic = TXTatzAplic.Text = item.SubItems[6].Text;
         }
     }
 }
