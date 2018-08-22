@@ -93,5 +93,18 @@ namespace ProjetoOficina
             TXTatzAplic.Text = item.SubItems[6].Text;
         }
 
+        private void BTNnovo_Click(object sender, EventArgs e)
+        {
+            Novo FormNovo = new Novo();
+            FormNovo.Owner = this;
+            FormNovo.Show();
+        }
+
+        private void LBKajuda_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            InicialAjuda FormInicialAjuda = new InicialAjuda();
+            FormInicialAjuda.Owner = this;
+            FormInicialAjuda.Show(); 
+        }
     }
 }

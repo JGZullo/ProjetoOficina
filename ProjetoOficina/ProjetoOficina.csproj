@@ -53,11 +53,38 @@
     <Compile Include="Inicial.Designer.cs">
       <DependentUpon>Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicialAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicialAjuda.Designer.cs">
+      <DependentUpon>InicialAjuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Novo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Novo.Designer.cs">
+      <DependentUpon>Novo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovoAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovoAjuda.Designer.cs">
+      <DependentUpon>NovoAjuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicialAjuda.resx">
+      <DependentUpon>InicialAjuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Novo.resx">
+      <DependentUpon>Novo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovoAjuda.resx">
+      <DependentUpon>NovoAjuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

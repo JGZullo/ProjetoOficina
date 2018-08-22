@@ -59,6 +59,7 @@
             this.LBLatzCod = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TXTatzNome = new System.Windows.Forms.TextBox();
+            this.LBKajuda = new System.Windows.Forms.LinkLabel();
             this.GRPatualizar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +88,7 @@
             this.BTNnovo.TabIndex = 3;
             this.BTNnovo.Text = "Novo";
             this.BTNnovo.UseVisualStyleBackColor = true;
+            this.BTNnovo.Click += new System.EventHandler(this.BTNnovo_Click);
             // 
             // BTNsair
             // 
@@ -354,11 +356,23 @@
             this.TXTatzNome.Size = new System.Drawing.Size(267, 22);
             this.TXTatzNome.TabIndex = 17;
             // 
+            // LBKajuda
+            // 
+            this.LBKajuda.AutoSize = true;
+            this.LBKajuda.Location = new System.Drawing.Point(1379, 9);
+            this.LBKajuda.Name = "LBKajuda";
+            this.LBKajuda.Size = new System.Drawing.Size(44, 17);
+            this.LBKajuda.TabIndex = 16;
+            this.LBKajuda.TabStop = true;
+            this.LBKajuda.Text = "Ajuda";
+            this.LBKajuda.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LBKajuda_LinkClicked);
+            // 
             // Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1435, 833);
+            this.Controls.Add(this.LBKajuda);
             this.Controls.Add(this.GRPatualizar);
             this.Controls.Add(this.LSTestoq);
             this.Controls.Add(this.CHKpratel);
@@ -422,6 +436,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox TXTatzQtd;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel LBKajuda;
     }
 }
 
