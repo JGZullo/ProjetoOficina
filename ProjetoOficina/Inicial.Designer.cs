@@ -204,6 +204,7 @@
             this.LSTestoq.Location = new System.Drawing.Point(9, 139);
             this.LSTestoq.Name = "LSTestoq";
             this.LSTestoq.Size = new System.Drawing.Size(1127, 429);
+            this.LSTestoq.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.LSTestoq.TabIndex = 14;
             this.LSTestoq.UseCompatibleStateImageBehavior = false;
             this.LSTestoq.MouseClick += new System.Windows.Forms.MouseEventHandler(this.LSTestoq_MouseClick);

@@ -29,6 +29,23 @@ namespace ProjetoOficina
 
         private void BTNtudo_Click(object sender, EventArgs e)
         {
+            AtualizarTabelaCompleta();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LSTestoq.View = View.Details;
+            LSTestoq.Columns.Add("Nome", 230);
+            LSTestoq.Columns.Add("Código", 110);
+            LSTestoq.Columns.Add("Quantidade", 80);
+            LSTestoq.Columns.Add("Bandeja", 80);
+            LSTestoq.Columns.Add("Corredor", 80);
+            LSTestoq.Columns.Add("Prateleira", 80);
+            AtualizarTabelaCompleta();
+        }
+
+        private void AtualizarTabelaCompleta()
+        {
             MySqlConnection connection = new MySqlConnection(ConnectionString);
             connection.Open();
 
@@ -54,15 +71,33 @@ namespace ProjetoOficina
             connection.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void AtualizarTabelaLinha(string primaryKey)
         {
-            LSTestoq.View = View.Details;
-            LSTestoq.Columns.Add("Nome", 230);
-            LSTestoq.Columns.Add("Código", 110);
-            LSTestoq.Columns.Add("Quantidade", 80);
-            LSTestoq.Columns.Add("Bandeja", 80);
-            LSTestoq.Columns.Add("Corredor", 80);
-            LSTestoq.Columns.Add("Prateleira", 80);
+            LSTestoq.Items.RemoveByKey(primaryKey);
+            MySqlConnection connection = new MySqlConnection(ConnectionString);
+            connection.Open();
+
+            string sql = "SELECT * FROM estoque WHERE codigo= '" + primaryKey + "';";
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            LSTestoq.Items.Clear();
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader.GetString(0));
+                item.SubItems.Add(reader.GetString(1));
+                item.SubItems.Add(reader.GetInt32(2).ToString());
+                item.SubItems.Add(reader.GetString(3));
+                item.SubItems.Add(reader.GetString(4));
+                item.SubItems.Add(reader.GetString(5));
+                item.SubItems.Add(reader.GetString(6));
+                LSTestoq.Items.Insert(0, item);
+            }
+
+
+            reader.Close();
+            cmd.Dispose();
+            connection.Close();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -114,93 +149,100 @@ namespace ProjetoOficina
         private void BTNatualizar_Click(object sender, EventArgs e)
         {
             DialogResult atualizar;
-            string msgDadosAtualizados = "";
-            string dadosSql = "";
-            if (!TXTatzNome.Text.Equals(atzNome))
+            if (LSTestoq.SelectedItems.Count == 1)
             {
-                msgDadosAtualizados += "Nome\n";
-                dadosSql += "nome= '" + TXTatzNome.Text + "'";
-            }
-                
-            if (!TXTatzCod.Text.Equals(atzCod))
-            {
-                if (!dadosSql.Equals(""))
-                    dadosSql += ",";
-
-                dadosSql += "codigo= '" + TXTatzCod.Text + "'";
-                msgDadosAtualizados += "Código\n";
-            }   
-            if (!TXTatzQtd.Text.Equals(atzQtd))
-            {
-                if (!dadosSql.Equals(""))
-                    dadosSql += ",";
-
-                dadosSql += "quantidade= " + Convert.ToInt32(TXTatzQtd.Text);
-                msgDadosAtualizados += "Quantidade\n";
-            }
-                
-            if (!TXTatzBandej.Text.Equals(atzBandej))
-            {
-                if (!dadosSql.Equals(""))
-                    dadosSql += ",";
-
-                dadosSql += "bandeja= '" + TXTatzBandej.Text + "'";
-                msgDadosAtualizados += "Bandeja\n";
-            }
- 
-            if (!TXTatzCorred.Text.Equals(atzCorred))
-            {
-                if (!dadosSql.Equals(""))
-                    dadosSql += ",";
-
-                dadosSql += "corredor= '" + TXTatzCorred.Text + "'";
-                msgDadosAtualizados += "Corredor\n";
-            }
-                
-            if (!TXTatzPratel.Text.Equals(atzPratel))
-            {
-                if (!dadosSql.Equals(""))
-                    dadosSql += ",";
-
-                dadosSql += "prateleira= '" + TXTatzPratel.Text + "'";
-                msgDadosAtualizados += "Prateleira\n";
-            }
-                
-            if (!TXTatzAplic.Text.Equals(atzAplic))
-            {
-                if (!dadosSql.Equals(""))
-                    dadosSql += ",";
-
-                dadosSql += "aplicacao= '" + TXTatzAplic.Text + "'";
-                msgDadosAtualizados += "Aplicação\n";
-            }
-                
-            if (!msgDadosAtualizados.Equals(""))
-            {
-                atualizar = MessageBox.Show("Você irá atualizar os seguintes dados: \n" + msgDadosAtualizados +
-                                            "Deseja continuar?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (atualizar == DialogResult.Yes)
+                string msgDadosAtualizados = "";
+                string dadosSql = "";
+                if (!TXTatzNome.Text.Equals(atzNome))
                 {
-                    item = LSTestoq.SelectedItems[0];
-                    MySqlConnection connection = new MySqlConnection(ConnectionString);
-                    connection.Open();
-                    string sql = "UPDATE estoque SET " + dadosSql + " WHERE codigo= '" + item.SubItems[1].Text + "';";
-                    MySqlCommand cmd = new MySqlCommand(sql, connection);
-                    MySqlDataReader reader = cmd.ExecuteReader();
+                    msgDadosAtualizados += "Nome\n";
+                    dadosSql += "nome= '" + TXTatzNome.Text + "'";
+                }
 
-                    reader.Close();
-                    cmd.Dispose();
-                    connection.Close();
+                if (!TXTatzCod.Text.Equals(atzCod))
+                {
+                    if (!dadosSql.Equals(""))
+                        dadosSql += ",";
 
-                    atualizar = MessageBox.Show("Os dados foram alterados com sucesso.\n" + sql, "Mensagem do Sistema", MessageBoxButtons.OK);
-                    
+                    dadosSql += "codigo= '" + TXTatzCod.Text + "'";
+                    msgDadosAtualizados += "Código\n";
+                }
+                if (!TXTatzQtd.Text.Equals(atzQtd))
+                {
+                    if (!dadosSql.Equals(""))
+                        dadosSql += ",";
+
+                    dadosSql += "quantidade= " + Convert.ToInt32(TXTatzQtd.Text);
+                    msgDadosAtualizados += "Quantidade\n";
+                }
+
+                if (!TXTatzBandej.Text.Equals(atzBandej))
+                {
+                    if (!dadosSql.Equals(""))
+                        dadosSql += ",";
+
+                    dadosSql += "bandeja= '" + TXTatzBandej.Text + "'";
+                    msgDadosAtualizados += "Bandeja\n";
+                }
+
+                if (!TXTatzCorred.Text.Equals(atzCorred))
+                {
+                    if (!dadosSql.Equals(""))
+                        dadosSql += ",";
+
+                    dadosSql += "corredor= '" + TXTatzCorred.Text + "'";
+                    msgDadosAtualizados += "Corredor\n";
+                }
+
+                if (!TXTatzPratel.Text.Equals(atzPratel))
+                {
+                    if (!dadosSql.Equals(""))
+                        dadosSql += ",";
+
+                    dadosSql += "prateleira= '" + TXTatzPratel.Text + "'";
+                    msgDadosAtualizados += "Prateleira\n";
+                }
+
+                if (!TXTatzAplic.Text.Equals(atzAplic))
+                {
+                    if (!dadosSql.Equals(""))
+                        dadosSql += ",";
+
+                    dadosSql += "aplicacao= '" + TXTatzAplic.Text + "'";
+                    msgDadosAtualizados += "Aplicação\n";
+                }
+
+                
+                if (!msgDadosAtualizados.Equals(""))
+                {
+                    atualizar = MessageBox.Show("Você irá atualizar os seguintes dados: \n" + msgDadosAtualizados +
+                                                "Deseja continuar?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (atualizar == DialogResult.Yes)
+                    {
+                        item = LSTestoq.SelectedItems[0];
+                        MySqlConnection connection = new MySqlConnection(ConnectionString);
+                        connection.Open();
+                        string sql = "UPDATE estoque SET " + dadosSql + " WHERE codigo= '" + item.SubItems[1].Text + "';";
+                        MySqlCommand cmd = new MySqlCommand(sql, connection);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+
+                        reader.Close();
+                        cmd.Dispose();
+                        connection.Close();
+
+                        AtualizarTabelaLinha(item.SubItems[1].Text);
+                        atualizar = MessageBox.Show("Os dados foram alterados com sucesso.\n" + sql, "Mensagem do Sistema", MessageBoxButtons.OK);
+                    }
+                    else
+                        atualizar = MessageBox.Show("Não houve alteração nos dados do produto.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                     atualizar = MessageBox.Show("Não houve alteração nos dados do produto.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
-                atualizar = MessageBox.Show("Não houve alteração nos dados do produto.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            
+            {
+                atualizar = MessageBox.Show("Selecione um produto da tabela 'Estoque' para atualizar.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
