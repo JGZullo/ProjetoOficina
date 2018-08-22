@@ -78,11 +78,13 @@ namespace ProjetoOficina
             this.Close();
         }
 
-        string atzNome; string atzCod; string atzQtd; string atzBandej; string atzCorred; string atzPratel; string atzAplic;
+        string atzNome = ""; string atzCod = ""; string atzQtd = ""; string atzBandej = "";
+        string atzCorred = ""; string atzPratel = ""; string atzAplic = "";
+        ListViewItem item;
 
         private void LSTestoq_MouseClick(object sender, MouseEventArgs e)
         {
-            ListViewItem item = LSTestoq.SelectedItems[0];
+            item = LSTestoq.SelectedItems[0];
             //label aplicação
             LBLaplic.Text = item.SubItems[6].Text;
             //group box atualizar dados
@@ -113,31 +115,85 @@ namespace ProjetoOficina
         {
             DialogResult atualizar;
             string msgDadosAtualizados = "";
+            string dadosSql = "";
             if (!TXTatzNome.Text.Equals(atzNome))
+            {
                 msgDadosAtualizados += "Nome\n";
+                dadosSql += "nome= '" + TXTatzNome.Text + "'";
+            }
+                
             if (!TXTatzCod.Text.Equals(atzCod))
-                msgDadosAtualizados += "Código\n";
-            if (!TXTatzQtd.Text.Equals(atzQtd))
-                msgDadosAtualizados += "Quantidade\n";
-            if (!TXTatzBandej.Text.Equals(atzBandej))
-                msgDadosAtualizados += "Bandeja\n";
-            if (!TXTatzCorred.Text.Equals(atzCorred))
-                msgDadosAtualizados += "Corredor\n";
-            if (!TXTatzPratel.Text.Equals(atzPratel))
-                msgDadosAtualizados += "Prateleira\n";
-            if (!TXTatzAplic.Text.Equals(atzAplic))
-                msgDadosAtualizados += "Aplicação\n";
+            {
+                if (!dadosSql.Equals(""))
+                    dadosSql += ",";
 
+                dadosSql += "codigo= '" + TXTatzCod.Text + "'";
+                msgDadosAtualizados += "Código\n";
+            }   
+            if (!TXTatzQtd.Text.Equals(atzQtd))
+            {
+                if (!dadosSql.Equals(""))
+                    dadosSql += ",";
+
+                dadosSql += "quantidade= " + Convert.ToInt32(TXTatzQtd.Text);
+                msgDadosAtualizados += "Quantidade\n";
+            }
+                
+            if (!TXTatzBandej.Text.Equals(atzBandej))
+            {
+                if (!dadosSql.Equals(""))
+                    dadosSql += ",";
+
+                dadosSql += "bandeja= '" + TXTatzBandej.Text + "'";
+                msgDadosAtualizados += "Bandeja\n";
+            }
+ 
+            if (!TXTatzCorred.Text.Equals(atzCorred))
+            {
+                if (!dadosSql.Equals(""))
+                    dadosSql += ",";
+
+                dadosSql += "corredor= '" + TXTatzCorred.Text + "'";
+                msgDadosAtualizados += "Corredor\n";
+            }
+                
+            if (!TXTatzPratel.Text.Equals(atzPratel))
+            {
+                if (!dadosSql.Equals(""))
+                    dadosSql += ",";
+
+                dadosSql += "prateleira= '" + TXTatzPratel.Text + "'";
+                msgDadosAtualizados += "Prateleira\n";
+            }
+                
+            if (!TXTatzAplic.Text.Equals(atzAplic))
+            {
+                if (!dadosSql.Equals(""))
+                    dadosSql += ",";
+
+                dadosSql += "aplicacao= '" + TXTatzAplic.Text + "'";
+                msgDadosAtualizados += "Aplicação\n";
+            }
+                
             if (!msgDadosAtualizados.Equals(""))
             {
                 atualizar = MessageBox.Show("Você irá atualizar os seguintes dados: \n" + msgDadosAtualizados +
                                             "Deseja continuar?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (atualizar == DialogResult.Yes)
                 {
-                    //código para atualizar banco de dados vai aqui
+                    item = LSTestoq.SelectedItems[0];
+                    MySqlConnection connection = new MySqlConnection(ConnectionString);
+                    connection.Open();
+                    string sql = "UPDATE estoque SET " + dadosSql + " WHERE codigo= '" + item.SubItems[1].Text + "';";
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
 
+                    reader.Close();
+                    cmd.Dispose();
+                    connection.Close();
 
-                    atualizar = MessageBox.Show("Os dados foram alterados com sucesso.", "Mensagem do Sistema", MessageBoxButtons.OK);
+                    atualizar = MessageBox.Show("Os dados foram alterados com sucesso.\n" + sql, "Mensagem do Sistema", MessageBoxButtons.OK);
+                    
                 }
                 else
                     atualizar = MessageBox.Show("Não houve alteração nos dados do produto.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
