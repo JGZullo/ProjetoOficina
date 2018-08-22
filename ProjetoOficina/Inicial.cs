@@ -91,7 +91,7 @@ namespace ProjetoOficina
                 item.SubItems.Add(reader.GetString(4));
                 item.SubItems.Add(reader.GetString(5));
                 item.SubItems.Add(reader.GetString(6));
-                LSTestoq.Items.Insert(0, item);
+                LSTestoq.Items.Insert(LSTestoq.Items.Count, item);
             }
 
 
@@ -243,6 +243,21 @@ namespace ProjetoOficina
             {
                 atualizar = MessageBox.Show("Selecione um produto da tabela 'Estoque' para atualizar.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void TXTproc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTproc_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTproc_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

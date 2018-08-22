@@ -80,7 +80,7 @@
             this.GRPnovo.Size = new System.Drawing.Size(824, 467);
             this.GRPnovo.TabIndex = 16;
             this.GRPnovo.TabStop = false;
-            this.GRPnovo.Text = "Insira os dados do produto a ser inserido no sistema: ";
+            this.GRPnovo.Text = "Insira os dados do produto a ser cadastrado no sistema: ";
             // 
             // TXTnovoQtd
             // 

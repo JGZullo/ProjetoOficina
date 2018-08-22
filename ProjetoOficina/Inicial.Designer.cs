@@ -69,6 +69,9 @@
             this.TXTproc.Name = "TXTproc";
             this.TXTproc.Size = new System.Drawing.Size(688, 22);
             this.TXTproc.TabIndex = 0;
+            this.TXTproc.Click += new System.EventHandler(this.TXTproc_Click);
+            this.TXTproc.TextChanged += new System.EventHandler(this.TXTproc_TextChanged);
+            this.TXTproc.Leave += new System.EventHandler(this.TXTproc_Leave);
             // 
             // BTNtudo
             // 
@@ -139,6 +142,8 @@
             // CHKcod
             // 
             this.CHKcod.AutoSize = true;
+            this.CHKcod.Checked = true;
+            this.CHKcod.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CHKcod.Location = new System.Drawing.Point(359, 78);
             this.CHKcod.Name = "CHKcod";
             this.CHKcod.Size = new System.Drawing.Size(74, 21);
@@ -149,6 +154,8 @@
             // CHKnome
             // 
             this.CHKnome.AutoSize = true;
+            this.CHKnome.Checked = true;
+            this.CHKnome.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CHKnome.Location = new System.Drawing.Point(262, 78);
             this.CHKnome.Name = "CHKnome";
             this.CHKnome.Size = new System.Drawing.Size(67, 21);
@@ -159,6 +166,8 @@
             // CHKqtd
             // 
             this.CHKqtd.AutoSize = true;
+            this.CHKqtd.Checked = true;
+            this.CHKqtd.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CHKqtd.Location = new System.Drawing.Point(457, 78);
             this.CHKqtd.Name = "CHKqtd";
             this.CHKqtd.Size = new System.Drawing.Size(104, 21);
@@ -169,6 +178,8 @@
             // CHKbandej
             // 
             this.CHKbandej.AutoSize = true;
+            this.CHKbandej.Checked = true;
+            this.CHKbandej.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CHKbandej.Location = new System.Drawing.Point(580, 78);
             this.CHKbandej.Name = "CHKbandej";
             this.CHKbandej.Size = new System.Drawing.Size(82, 21);
@@ -179,6 +190,8 @@
             // CHKcorred
             // 
             this.CHKcorred.AutoSize = true;
+            this.CHKcorred.Checked = true;
+            this.CHKcorred.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CHKcorred.Location = new System.Drawing.Point(684, 78);
             this.CHKcorred.Name = "CHKcorred";
             this.CHKcorred.Size = new System.Drawing.Size(86, 21);
@@ -189,6 +202,8 @@
             // CHKpratel
             // 
             this.CHKpratel.AutoSize = true;
+            this.CHKpratel.Checked = true;
+            this.CHKpratel.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CHKpratel.Location = new System.Drawing.Point(804, 78);
             this.CHKpratel.Name = "CHKpratel";
             this.CHKpratel.Size = new System.Drawing.Size(91, 21);
