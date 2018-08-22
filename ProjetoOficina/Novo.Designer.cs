@@ -45,7 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TXTnovoNome = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.LSTestoq = new System.Windows.Forms.ListView();
+            this.LSTrecente = new System.Windows.Forms.ListView();
             this.BTNlimpar = new System.Windows.Forms.Button();
             this.BTNvoltar = new System.Windows.Forms.Button();
             this.LBKajuda = new System.Windows.Forms.LinkLabel();
@@ -58,7 +58,7 @@
             this.GRPnovo.Controls.Add(this.LBKajuda);
             this.GRPnovo.Controls.Add(this.BTNvoltar);
             this.GRPnovo.Controls.Add(this.BTNlimpar);
-            this.GRPnovo.Controls.Add(this.LSTestoq);
+            this.GRPnovo.Controls.Add(this.LSTrecente);
             this.GRPnovo.Controls.Add(this.label6);
             this.GRPnovo.Controls.Add(this.TXTnovoQtd);
             this.GRPnovo.Controls.Add(this.label2);
@@ -106,6 +106,7 @@
             this.BTNnovo.TabIndex = 16;
             this.BTNnovo.Text = "Salvar";
             this.BTNnovo.UseVisualStyleBackColor = true;
+            this.BTNnovo.Click += new System.EventHandler(this.BTNnovo_Click);
             // 
             // TXTnovoAplic
             // 
@@ -214,16 +215,16 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Dados inseridos recentemente: ";
             // 
-            // LSTestoq
+            // LSTrecente
             // 
-            this.LSTestoq.BackColor = System.Drawing.Color.White;
-            this.LSTestoq.FullRowSelect = true;
-            this.LSTestoq.GridLines = true;
-            this.LSTestoq.Location = new System.Drawing.Point(6, 327);
-            this.LSTestoq.Name = "LSTestoq";
-            this.LSTestoq.Size = new System.Drawing.Size(812, 134);
-            this.LSTestoq.TabIndex = 29;
-            this.LSTestoq.UseCompatibleStateImageBehavior = false;
+            this.LSTrecente.BackColor = System.Drawing.Color.White;
+            this.LSTrecente.FullRowSelect = true;
+            this.LSTrecente.GridLines = true;
+            this.LSTrecente.Location = new System.Drawing.Point(6, 327);
+            this.LSTrecente.Name = "LSTrecente";
+            this.LSTrecente.Size = new System.Drawing.Size(812, 134);
+            this.LSTrecente.TabIndex = 29;
+            this.LSTrecente.UseCompatibleStateImageBehavior = false;
             // 
             // BTNlimpar
             // 
@@ -293,7 +294,7 @@
         private System.Windows.Forms.TextBox TXTnovoNome;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BTNlimpar;
-        private System.Windows.Forms.ListView LSTestoq;
+        private System.Windows.Forms.ListView LSTrecente;
         private System.Windows.Forms.Button BTNvoltar;
         private System.Windows.Forms.LinkLabel LBKajuda;
     }
