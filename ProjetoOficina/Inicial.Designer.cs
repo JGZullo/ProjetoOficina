@@ -59,6 +59,7 @@
             // 
             // TXTproc
             // 
+            this.TXTproc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTproc.Location = new System.Drawing.Point(262, 38);
             this.TXTproc.Name = "TXTproc";
             this.TXTproc.Size = new System.Drawing.Size(688, 22);
@@ -80,7 +81,7 @@
             this.BTNnovo.Location = new System.Drawing.Point(1032, 47);
             this.BTNnovo.Name = "BTNnovo";
             this.BTNnovo.Size = new System.Drawing.Size(104, 23);
-            this.BTNnovo.TabIndex = 3;
+            this.BTNnovo.TabIndex = 2;
             this.BTNnovo.Text = "Novo";
             this.BTNnovo.UseVisualStyleBackColor = true;
             this.BTNnovo.Click += new System.EventHandler(this.BTNnovo_Click);
@@ -90,7 +91,7 @@
             this.BTNsair.Location = new System.Drawing.Point(1032, 76);
             this.BTNsair.Name = "BTNsair";
             this.BTNsair.Size = new System.Drawing.Size(104, 23);
-            this.BTNsair.TabIndex = 4;
+            this.BTNsair.TabIndex = 3;
             this.BTNsair.Text = "Sair";
             this.BTNsair.UseVisualStyleBackColor = true;
             this.BTNsair.Click += new System.EventHandler(this.BTNsair_Click);
@@ -168,16 +169,17 @@
             this.GRPatualizar.Location = new System.Drawing.Point(1142, 139);
             this.GRPatualizar.Name = "GRPatualizar";
             this.GRPatualizar.Size = new System.Drawing.Size(279, 429);
-            this.GRPatualizar.TabIndex = 15;
+            this.GRPatualizar.TabIndex = 8;
             this.GRPatualizar.TabStop = false;
             this.GRPatualizar.Text = "Atualizar dados";
             // 
             // TXTatzQtd
             // 
+            this.TXTatzQtd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTatzQtd.Location = new System.Drawing.Point(6, 142);
             this.TXTatzQtd.Name = "TXTatzQtd";
             this.TXTatzQtd.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzQtd.TabIndex = 27;
+            this.TXTatzQtd.TabIndex = 6;
             // 
             // label2
             // 
@@ -193,19 +195,20 @@
             this.BTNatualizar.Location = new System.Drawing.Point(121, 16);
             this.BTNatualizar.Name = "BTNatualizar";
             this.BTNatualizar.Size = new System.Drawing.Size(152, 27);
-            this.BTNatualizar.TabIndex = 16;
+            this.BTNatualizar.TabIndex = 11;
             this.BTNatualizar.Text = "Atualizar";
             this.BTNatualizar.UseVisualStyleBackColor = true;
             this.BTNatualizar.Click += new System.EventHandler(this.BTNatualizar_Click);
             // 
             // TXTatzAplic
             // 
+            this.TXTatzAplic.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTatzAplic.Location = new System.Drawing.Point(6, 322);
             this.TXTatzAplic.Multiline = true;
             this.TXTatzAplic.Name = "TXTatzAplic";
             this.TXTatzAplic.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TXTatzAplic.Size = new System.Drawing.Size(264, 101);
-            this.TXTatzAplic.TabIndex = 25;
+            this.TXTatzAplic.TabIndex = 10;
             // 
             // label1
             // 
@@ -227,10 +230,11 @@
             // 
             // TXTatzPratel
             // 
+            this.TXTatzPratel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTatzPratel.Location = new System.Drawing.Point(9, 277);
             this.TXTatzPratel.Name = "TXTatzPratel";
             this.TXTatzPratel.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzPratel.TabIndex = 23;
+            this.TXTatzPratel.TabIndex = 9;
             // 
             // label4
             // 
@@ -243,6 +247,7 @@
             // 
             // TXTatzCorred
             // 
+            this.TXTatzCorred.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTatzCorred.Location = new System.Drawing.Point(6, 232);
             this.TXTatzCorred.Name = "TXTatzCorred";
             this.TXTatzCorred.Size = new System.Drawing.Size(267, 22);
@@ -250,17 +255,19 @@
             // 
             // TXTatzBandej
             // 
+            this.TXTatzBandej.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTatzBandej.Location = new System.Drawing.Point(6, 187);
             this.TXTatzBandej.Name = "TXTatzBandej";
             this.TXTatzBandej.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzBandej.TabIndex = 21;
+            this.TXTatzBandej.TabIndex = 7;
             // 
             // TXTatzCod
             // 
+            this.TXTatzCod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTatzCod.Location = new System.Drawing.Point(6, 94);
             this.TXTatzCod.Name = "TXTatzCod";
             this.TXTatzCod.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzCod.TabIndex = 20;
+            this.TXTatzCod.TabIndex = 5;
             // 
             // LBLatzNome
             // 
@@ -291,10 +298,11 @@
             // 
             // TXTatzNome
             // 
+            this.TXTatzNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTatzNome.Location = new System.Drawing.Point(6, 49);
             this.TXTatzNome.Name = "TXTatzNome";
             this.TXTatzNome.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzNome.TabIndex = 17;
+            this.TXTatzNome.TabIndex = 4;
             // 
             // LBKajuda
             // 
@@ -302,7 +310,7 @@
             this.LBKajuda.Location = new System.Drawing.Point(1379, 9);
             this.LBKajuda.Name = "LBKajuda";
             this.LBKajuda.Size = new System.Drawing.Size(44, 17);
-            this.LBKajuda.TabIndex = 16;
+            this.LBKajuda.TabIndex = 12;
             this.LBKajuda.TabStop = true;
             this.LBKajuda.Text = "Ajuda";
             this.LBKajuda.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LBKajuda_LinkClicked);

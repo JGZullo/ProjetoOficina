@@ -184,7 +184,7 @@ namespace ProjetoOficina
                     if (!dadosSql.Equals(""))
                         dadosSql += ",";
 
-                    dadosSql += "corredor= '" + TXTatzCorred.Text + "'";
+                    dadosSql += "corredor= '" + TXTatzCorred.Text+ "'";
                     msgDadosAtualizados += "Corredor\n";
                 }
 

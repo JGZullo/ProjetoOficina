@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.GRPnovo = new System.Windows.Forms.GroupBox();
-            this.TXTnovoQtd = new System.Windows.Forms.TextBox();
+            this.TXTnovoAplic = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.BTNnovo = new System.Windows.Forms.Button();
-            this.TXTnovoAplic = new System.Windows.Forms.TextBox();
+            this.TXTnovoPratel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.TXTnovoPratel = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.TXTnovoCorred = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TXTnovoBandej = new System.Windows.Forms.TextBox();
+            this.TXTnovoQtd = new System.Windows.Forms.TextBox();
             this.TXTnovoCod = new System.Windows.Forms.TextBox();
             this.LBLatzNome = new System.Windows.Forms.Label();
             this.LBLatzCod = new System.Windows.Forms.Label();
@@ -60,16 +60,16 @@
             this.GRPnovo.Controls.Add(this.BTNlimpar);
             this.GRPnovo.Controls.Add(this.LSTrecente);
             this.GRPnovo.Controls.Add(this.label6);
-            this.GRPnovo.Controls.Add(this.TXTnovoQtd);
+            this.GRPnovo.Controls.Add(this.TXTnovoAplic);
             this.GRPnovo.Controls.Add(this.label2);
             this.GRPnovo.Controls.Add(this.BTNnovo);
-            this.GRPnovo.Controls.Add(this.TXTnovoAplic);
+            this.GRPnovo.Controls.Add(this.TXTnovoPratel);
             this.GRPnovo.Controls.Add(this.label1);
             this.GRPnovo.Controls.Add(this.label5);
-            this.GRPnovo.Controls.Add(this.TXTnovoPratel);
-            this.GRPnovo.Controls.Add(this.label4);
             this.GRPnovo.Controls.Add(this.TXTnovoCorred);
+            this.GRPnovo.Controls.Add(this.label4);
             this.GRPnovo.Controls.Add(this.TXTnovoBandej);
+            this.GRPnovo.Controls.Add(this.TXTnovoQtd);
             this.GRPnovo.Controls.Add(this.TXTnovoCod);
             this.GRPnovo.Controls.Add(this.LBLatzNome);
             this.GRPnovo.Controls.Add(this.LBLatzCod);
@@ -82,17 +82,20 @@
             this.GRPnovo.TabStop = false;
             this.GRPnovo.Text = "Insira os dados do produto a ser cadastrado no sistema: ";
             // 
-            // TXTnovoQtd
+            // TXTnovoAplic
             // 
-            this.TXTnovoQtd.Location = new System.Drawing.Point(6, 94);
-            this.TXTnovoQtd.Name = "TXTnovoQtd";
-            this.TXTnovoQtd.Size = new System.Drawing.Size(267, 22);
-            this.TXTnovoQtd.TabIndex = 27;
+            this.TXTnovoAplic.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTnovoAplic.Location = new System.Drawing.Point(6, 192);
+            this.TXTnovoAplic.Multiline = true;
+            this.TXTnovoAplic.Name = "TXTnovoAplic";
+            this.TXTnovoAplic.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TXTnovoAplic.Size = new System.Drawing.Size(812, 112);
+            this.TXTnovoAplic.TabIndex = 23;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 74);
+            this.label2.Location = new System.Drawing.Point(6, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 26;
@@ -103,19 +106,18 @@
             this.BTNnovo.Location = new System.Drawing.Point(604, 49);
             this.BTNnovo.Name = "BTNnovo";
             this.BTNnovo.Size = new System.Drawing.Size(214, 27);
-            this.BTNnovo.TabIndex = 16;
+            this.BTNnovo.TabIndex = 24;
             this.BTNnovo.Text = "Salvar";
             this.BTNnovo.UseVisualStyleBackColor = true;
             this.BTNnovo.Click += new System.EventHandler(this.BTNnovo_Click);
             // 
-            // TXTnovoAplic
+            // TXTnovoPratel
             // 
-            this.TXTnovoAplic.Location = new System.Drawing.Point(6, 192);
-            this.TXTnovoAplic.Multiline = true;
-            this.TXTnovoAplic.Name = "TXTnovoAplic";
-            this.TXTnovoAplic.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TXTnovoAplic.Size = new System.Drawing.Size(812, 104);
-            this.TXTnovoAplic.TabIndex = 25;
+            this.TXTnovoPratel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTnovoPratel.Location = new System.Drawing.Point(292, 146);
+            this.TXTnovoPratel.Name = "TXTnovoPratel";
+            this.TXTnovoPratel.Size = new System.Drawing.Size(267, 22);
+            this.TXTnovoPratel.TabIndex = 22;
             // 
             // label1
             // 
@@ -129,48 +131,52 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(292, 121);
+            this.label5.Location = new System.Drawing.Point(292, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 17);
             this.label5.TabIndex = 21;
             this.label5.Text = "Prateleira";
             // 
-            // TXTnovoPratel
+            // TXTnovoCorred
             // 
-            this.TXTnovoPratel.Location = new System.Drawing.Point(295, 141);
-            this.TXTnovoPratel.Name = "TXTnovoPratel";
-            this.TXTnovoPratel.Size = new System.Drawing.Size(267, 22);
-            this.TXTnovoPratel.TabIndex = 23;
+            this.TXTnovoCorred.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTnovoCorred.Location = new System.Drawing.Point(6, 146);
+            this.TXTnovoCorred.Name = "TXTnovoCorred";
+            this.TXTnovoCorred.Size = new System.Drawing.Size(267, 22);
+            this.TXTnovoCorred.TabIndex = 21;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 121);
+            this.label4.Location = new System.Drawing.Point(6, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 20;
             this.label4.Text = "Corredor";
             // 
-            // TXTnovoCorred
-            // 
-            this.TXTnovoCorred.Location = new System.Drawing.Point(6, 141);
-            this.TXTnovoCorred.Name = "TXTnovoCorred";
-            this.TXTnovoCorred.Size = new System.Drawing.Size(267, 22);
-            this.TXTnovoCorred.TabIndex = 22;
-            // 
             // TXTnovoBandej
             // 
-            this.TXTnovoBandej.Location = new System.Drawing.Point(292, 94);
+            this.TXTnovoBandej.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTnovoBandej.Location = new System.Drawing.Point(292, 96);
             this.TXTnovoBandej.Name = "TXTnovoBandej";
             this.TXTnovoBandej.Size = new System.Drawing.Size(267, 22);
-            this.TXTnovoBandej.TabIndex = 21;
+            this.TXTnovoBandej.TabIndex = 20;
+            // 
+            // TXTnovoQtd
+            // 
+            this.TXTnovoQtd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TXTnovoQtd.Location = new System.Drawing.Point(6, 96);
+            this.TXTnovoQtd.Name = "TXTnovoQtd";
+            this.TXTnovoQtd.Size = new System.Drawing.Size(267, 22);
+            this.TXTnovoQtd.TabIndex = 19;
             // 
             // TXTnovoCod
             // 
+            this.TXTnovoCod.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTnovoCod.Location = new System.Drawing.Point(292, 49);
             this.TXTnovoCod.Name = "TXTnovoCod";
             this.TXTnovoCod.Size = new System.Drawing.Size(267, 22);
-            this.TXTnovoCod.TabIndex = 20;
+            this.TXTnovoCod.TabIndex = 18;
             // 
             // LBLatzNome
             // 
@@ -193,7 +199,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(292, 74);
+            this.label3.Location = new System.Drawing.Point(292, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 17);
             this.label3.TabIndex = 19;
@@ -201,6 +207,7 @@
             // 
             // TXTnovoNome
             // 
+            this.TXTnovoNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TXTnovoNome.Location = new System.Drawing.Point(6, 49);
             this.TXTnovoNome.Name = "TXTnovoNome";
             this.TXTnovoNome.Size = new System.Drawing.Size(267, 22);
@@ -211,9 +218,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 307);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(209, 17);
+            this.label6.Size = new System.Drawing.Size(116, 17);
             this.label6.TabIndex = 28;
-            this.label6.Text = "Dados inseridos recentemente: ";
+            this.label6.Text = "Dados recentes: ";
             // 
             // LSTrecente
             // 
@@ -225,22 +232,24 @@
             this.LSTrecente.Size = new System.Drawing.Size(812, 134);
             this.LSTrecente.TabIndex = 29;
             this.LSTrecente.UseCompatibleStateImageBehavior = false;
+            this.LSTrecente.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.LSTrecente_ColumnClick);
             // 
             // BTNlimpar
             // 
-            this.BTNlimpar.Location = new System.Drawing.Point(604, 94);
+            this.BTNlimpar.Location = new System.Drawing.Point(604, 146);
             this.BTNlimpar.Name = "BTNlimpar";
             this.BTNlimpar.Size = new System.Drawing.Size(214, 27);
-            this.BTNlimpar.TabIndex = 30;
+            this.BTNlimpar.TabIndex = 26;
             this.BTNlimpar.Text = "Limpar \"Dados recentes\"";
             this.BTNlimpar.UseVisualStyleBackColor = true;
+            this.BTNlimpar.Click += new System.EventHandler(this.BTNlimpar_Click);
             // 
             // BTNvoltar
             // 
-            this.BTNvoltar.Location = new System.Drawing.Point(604, 141);
+            this.BTNvoltar.Location = new System.Drawing.Point(604, 96);
             this.BTNvoltar.Name = "BTNvoltar";
             this.BTNvoltar.Size = new System.Drawing.Size(214, 27);
-            this.BTNvoltar.TabIndex = 31;
+            this.BTNvoltar.TabIndex = 25;
             this.BTNvoltar.Text = "Voltar";
             this.BTNvoltar.UseVisualStyleBackColor = true;
             this.BTNvoltar.Click += new System.EventHandler(this.BTNvoltar_Click);
@@ -251,7 +260,7 @@
             this.LBKajuda.Location = new System.Drawing.Point(774, 18);
             this.LBKajuda.Name = "LBKajuda";
             this.LBKajuda.Size = new System.Drawing.Size(44, 17);
-            this.LBKajuda.TabIndex = 17;
+            this.LBKajuda.TabIndex = 27;
             this.LBKajuda.TabStop = true;
             this.LBKajuda.Text = "Ajuda";
             this.LBKajuda.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LBKajuda_LinkClicked);
@@ -277,16 +286,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox GRPnovo;
-        private System.Windows.Forms.TextBox TXTnovoQtd;
+        private System.Windows.Forms.TextBox TXTnovoAplic;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BTNnovo;
-        private System.Windows.Forms.TextBox TXTnovoAplic;
+        private System.Windows.Forms.TextBox TXTnovoPratel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TXTnovoPratel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TXTnovoCorred;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TXTnovoBandej;
+        private System.Windows.Forms.TextBox TXTnovoQtd;
         private System.Windows.Forms.TextBox TXTnovoCod;
         private System.Windows.Forms.Label LBLatzNome;
         private System.Windows.Forms.Label LBLatzCod;

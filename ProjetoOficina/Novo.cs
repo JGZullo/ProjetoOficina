@@ -29,19 +29,25 @@ namespace ProjetoOficina
         MySqlConnection connection;
         MySqlCommand cmd;
         MySqlDataReader reader;
+
+        ListViewColumnSorter lvwColumnSorter;
+        DialogResult messageBox;
         
 
         private void Novo_Load(object sender, EventArgs e)
         {
+            ActiveControl = TXTnovoNome;
+
             LSTrecente.View = View.Details;
-            LSTrecente.Columns.Add("Nome", 230);
-            LSTrecente.Columns.Add("Código", 110);
+            LSTrecente.Columns.Add("Nome", 100);
+            LSTrecente.Columns.Add("Código", 80);
             LSTrecente.Columns.Add("Quantidade", 80);
             LSTrecente.Columns.Add("Bandeja", 80);
             LSTrecente.Columns.Add("Corredor", 80);
             LSTrecente.Columns.Add("Prateleira", 80);
+            LSTrecente.Columns.Add("Aplicação", 130);
 
-            ListViewColumnSorter lvwColumnSorter = new ListViewColumnSorter();
+            lvwColumnSorter = new ListViewColumnSorter();
             LSTrecente.ListViewItemSorter = lvwColumnSorter;
         }
 
@@ -59,25 +65,97 @@ namespace ProjetoOficina
 
         private void Novo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BTNnovo.Enabled = true;
+            
         }
 
         private void BTNnovo_Click(object sender, EventArgs e)
+        {
+            tentarCadastro();
+        }
+
+        private void tentarCadastro()
+        {
+            if ((TXTnovoNome.Text.Equals("") || TXTnovoNome.Text == null) || (TXTnovoCod.Text.Equals("") || TXTnovoCod.Text == null))
+                messageBox = MessageBox.Show("Os campos 'Nome' e 'Código' não podem estar vazios.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                if ((TXTnovoQtd.Text.Equals("") || TXTnovoNome.Text == null) || (TXTnovoBandej.Text.Equals("") || TXTnovoBandej.Text == null) || (TXTnovoCorred.Text.Equals("") || TXTnovoCorred.Text == null) || (TXTnovoPratel.Text.Equals("") || TXTnovoPratel.Text == null) || (TXTnovoAplic.Text.Equals("") || TXTnovoAplic.Text == null))
+                {
+                    messageBox = MessageBox.Show("Um dos campos de cadastro está vazio. Cadastrar um produto desta forma pode trazer problemas para encontrá-lo no sistema, no futuro.\n" +
+                                                 "Deseja continuar mesmo assim?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    if (messageBox == DialogResult.Yes)
+                    {
+                        cadastrar();
+                    }
+                    else
+                    {
+                        messageBox = MessageBox.Show("A operação foi cancelada.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else
+                    cadastrar();
+            }
+        }
+
+        private void cadastrar()
         {
             connection = new MySqlConnection(ConnectionString);
             connection.Open();
 
             string sql = "INSERT INTO estoque (nome, codigo, quantidade, bandeja, corredor," +
                          "prateleira, aplicacao) VALUES " +
-                         "('"+TXTnovoNome.Text+"','"+TXTnovoCod.Text+"','"+TXTnovoQtd.Text+"','"+TXTnovoBandej.Text+
-                         "','"+TXTnovoCorred.Text+"','"+TXTnovoPratel.Text+"','"+TXTnovoAplic.Text+"');";
+                         "('" + TXTnovoNome.Text + "','" + TXTnovoCod.Text + "','" + TXTnovoQtd.Text + "','" + TXTnovoBandej.Text +
+                         "','" + TXTnovoCorred.Text + "','" + TXTnovoPratel.Text + "','" + TXTnovoAplic.Text + "');";
+
+            ListViewItem item = new ListViewItem(TXTnovoNome.Text);
+            item.SubItems.Add(TXTnovoCod.Text);
+            item.SubItems.Add(TXTnovoQtd.Text);
+            item.SubItems.Add(TXTnovoBandej.Text);
+            item.SubItems.Add(TXTnovoPratel.Text);
+            item.SubItems.Add(TXTnovoAplic.Text);
+            item.SubItems.Add(TXTnovoCorred.Text);
+            LSTrecente.Items.Add(item);
+
             cmd = new MySqlCommand(sql, connection);
             reader = cmd.ExecuteReader();
-
 
             reader.Close();
             cmd.Dispose();
             connection.Close();
+
+            TXTnovoNome.Clear(); TXTnovoCod.Clear(); TXTnovoQtd.Clear(); TXTnovoBandej.Clear();
+            TXTnovoPratel.Clear(); TXTnovoAplic.Clear();
+
+            messageBox = MessageBox.Show("O cadastro foi realizado com sucesso.", "Mensagem do Sistema", MessageBoxButtons.OK);
         }
+
+        private void LSTrecente_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if (e.Column == lvwColumnSorter.SortColumn)
+            {
+                if (lvwColumnSorter.Order == SortOrder.Ascending)
+                {
+                    lvwColumnSorter.Order = SortOrder.Descending;
+                }
+                else
+                {
+                    lvwColumnSorter.Order = SortOrder.Ascending;
+                }
+            }
+            else
+            {
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
+
+            this.LSTrecente.Sort();
+        }
+
+        private void BTNlimpar_Click(object sender, EventArgs e)
+        {
+            LSTrecente.Clear();
+        }
+
+        
     }
 }
