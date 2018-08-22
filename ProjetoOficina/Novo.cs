@@ -79,7 +79,7 @@ namespace ProjetoOficina
                 messageBox = MessageBox.Show("Os campos 'Nome' e 'Código' não podem estar vazios.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                if ((TXTnovoQtd.Text.Equals("") || TXTnovoNome.Text == null) || (TXTnovoBandej.Text.Equals("") || TXTnovoBandej.Text == null) || (TXTnovoCorred.Text.Equals("") || TXTnovoCorred.Text == null) || (TXTnovoPratel.Text.Equals("") || TXTnovoPratel.Text == null) || (TXTnovoAplic.Text.Equals("") || TXTnovoAplic.Text == null))
+                if ((TXTnovoBandej.Text.Equals("") || TXTnovoBandej.Text == null) || (TXTnovoCorred.Text.Equals("") || TXTnovoCorred.Text == null) || (TXTnovoPratel.Text.Equals("") || TXTnovoPratel.Text == null) || (TXTnovoAplic.Text.Equals("") || TXTnovoAplic.Text == null))
                 {
                     messageBox = MessageBox.Show("Um dos campos de cadastro está vazio. Cadastrar um produto desta forma pode trazer problemas para encontrá-lo no sistema, no futuro.\n" +
                                                  "Deseja continuar mesmo assim?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -99,34 +99,43 @@ namespace ProjetoOficina
 
         private void cadastrar()
         {
-            connection = new MySqlConnection(ConnectionString);
-            connection.Open();
+            try
+            {
+                connection = new MySqlConnection(ConnectionString);
+                connection.Open();
 
-            string sql = "INSERT INTO estoque (nome, codigo, quantidade, bandeja, corredor," +
-                         "prateleira, aplicacao) VALUES " +
-                         "('" + TXTnovoNome.Text + "','" + TXTnovoCod.Text + "','" + TXTnovoQtd.Text + "','" + TXTnovoBandej.Text +
-                         "','" + TXTnovoCorred.Text + "','" + TXTnovoPratel.Text + "','" + TXTnovoAplic.Text + "');";
+                string sql = "INSERT INTO estoque (nome, codigo, quantidade, bandeja, corredor," +
+                             "prateleira, aplicacao) VALUES " +
+                             "('" + TXTnovoNome.Text + "','" + TXTnovoCod.Text + "','" + NMCqtd.Value.ToString() + "','" + TXTnovoBandej.Text +
+                             "','" + TXTnovoCorred.Text + "','" + TXTnovoPratel.Text + "','" + TXTnovoAplic.Text + "');";
 
-            ListViewItem item = new ListViewItem(TXTnovoNome.Text);
-            item.SubItems.Add(TXTnovoCod.Text);
-            item.SubItems.Add(TXTnovoQtd.Text);
-            item.SubItems.Add(TXTnovoBandej.Text);
-            item.SubItems.Add(TXTnovoPratel.Text);
-            item.SubItems.Add(TXTnovoAplic.Text);
-            item.SubItems.Add(TXTnovoCorred.Text);
-            LSTrecente.Items.Add(item);
+                cmd = new MySqlCommand(sql, connection);
+                reader = cmd.ExecuteReader();
 
-            cmd = new MySqlCommand(sql, connection);
-            reader = cmd.ExecuteReader();
+                ListViewItem item = new ListViewItem(TXTnovoNome.Text);
+                item.SubItems.Add(TXTnovoCod.Text);
+                item.SubItems.Add(NMCqtd.Value.ToString());
+                item.SubItems.Add(TXTnovoBandej.Text);
+                item.SubItems.Add(TXTnovoPratel.Text);
+                item.SubItems.Add(TXTnovoAplic.Text);
+                item.SubItems.Add(TXTnovoCorred.Text);
+                LSTrecente.Items.Add(item);
 
-            reader.Close();
-            cmd.Dispose();
-            connection.Close();
+                TXTnovoNome.Clear(); TXTnovoCod.Clear(); NMCqtd.Value = 0; TXTnovoBandej.Clear();
+                TXTnovoPratel.Clear(); TXTnovoAplic.Clear(); TXTnovoCorred.Clear();
 
-            TXTnovoNome.Clear(); TXTnovoCod.Clear(); TXTnovoQtd.Clear(); TXTnovoBandej.Clear();
-            TXTnovoPratel.Clear(); TXTnovoAplic.Clear();
+                reader.Close();
+                cmd.Dispose();
+                connection.Close();
 
-            messageBox = MessageBox.Show("O cadastro foi realizado com sucesso.", "Mensagem do Sistema", MessageBoxButtons.OK);
+                messageBox = MessageBox.Show("O cadastro foi realizado com sucesso.", "Mensagem do Sistema", MessageBoxButtons.OK);
+                ActiveControl = TXTnovoNome;
+            }
+            catch (MySqlException e)
+            {
+                messageBox = MessageBox.Show("Erro de cadastro: " + e.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void LSTrecente_ColumnClick(object sender, ColumnClickEventArgs e)

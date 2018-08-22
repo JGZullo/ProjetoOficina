@@ -38,7 +38,6 @@
             this.TXTnovoCorred = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TXTnovoBandej = new System.Windows.Forms.TextBox();
-            this.TXTnovoQtd = new System.Windows.Forms.TextBox();
             this.TXTnovoCod = new System.Windows.Forms.TextBox();
             this.LBLatzNome = new System.Windows.Forms.Label();
             this.LBLatzCod = new System.Windows.Forms.Label();
@@ -49,12 +48,15 @@
             this.BTNlimpar = new System.Windows.Forms.Button();
             this.BTNvoltar = new System.Windows.Forms.Button();
             this.LBKajuda = new System.Windows.Forms.LinkLabel();
+            this.NMCqtd = new System.Windows.Forms.NumericUpDown();
             this.GRPnovo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NMCqtd)).BeginInit();
             this.SuspendLayout();
             // 
             // GRPnovo
             // 
             this.GRPnovo.BackColor = System.Drawing.Color.LightGray;
+            this.GRPnovo.Controls.Add(this.NMCqtd);
             this.GRPnovo.Controls.Add(this.LBKajuda);
             this.GRPnovo.Controls.Add(this.BTNvoltar);
             this.GRPnovo.Controls.Add(this.BTNlimpar);
@@ -69,7 +71,6 @@
             this.GRPnovo.Controls.Add(this.TXTnovoCorred);
             this.GRPnovo.Controls.Add(this.label4);
             this.GRPnovo.Controls.Add(this.TXTnovoBandej);
-            this.GRPnovo.Controls.Add(this.TXTnovoQtd);
             this.GRPnovo.Controls.Add(this.TXTnovoCod);
             this.GRPnovo.Controls.Add(this.LBLatzNome);
             this.GRPnovo.Controls.Add(this.LBLatzCod);
@@ -161,14 +162,6 @@
             this.TXTnovoBandej.Name = "TXTnovoBandej";
             this.TXTnovoBandej.Size = new System.Drawing.Size(267, 22);
             this.TXTnovoBandej.TabIndex = 20;
-            // 
-            // TXTnovoQtd
-            // 
-            this.TXTnovoQtd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TXTnovoQtd.Location = new System.Drawing.Point(6, 96);
-            this.TXTnovoQtd.Name = "TXTnovoQtd";
-            this.TXTnovoQtd.Size = new System.Drawing.Size(267, 22);
-            this.TXTnovoQtd.TabIndex = 19;
             // 
             // TXTnovoCod
             // 
@@ -265,6 +258,19 @@
             this.LBKajuda.Text = "Ajuda";
             this.LBKajuda.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LBKajuda_LinkClicked);
             // 
+            // NMCqtd
+            // 
+            this.NMCqtd.Location = new System.Drawing.Point(6, 96);
+            this.NMCqtd.Maximum = new decimal(new int[] {
+            4000000,
+            0,
+            0,
+            0});
+            this.NMCqtd.Name = "NMCqtd";
+            this.NMCqtd.Size = new System.Drawing.Size(267, 22);
+            this.NMCqtd.TabIndex = 19;
+            this.NMCqtd.ThousandsSeparator = true;
+            // 
             // Novo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -279,6 +285,7 @@
             this.Load += new System.EventHandler(this.Novo_Load);
             this.GRPnovo.ResumeLayout(false);
             this.GRPnovo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NMCqtd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,7 +302,6 @@
         private System.Windows.Forms.TextBox TXTnovoCorred;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TXTnovoBandej;
-        private System.Windows.Forms.TextBox TXTnovoQtd;
         private System.Windows.Forms.TextBox TXTnovoCod;
         private System.Windows.Forms.Label LBLatzNome;
         private System.Windows.Forms.Label LBLatzCod;
@@ -306,5 +312,6 @@
         private System.Windows.Forms.ListView LSTrecente;
         private System.Windows.Forms.Button BTNvoltar;
         private System.Windows.Forms.LinkLabel LBKajuda;
+        private System.Windows.Forms.NumericUpDown NMCqtd;
     }
 }
