@@ -13,7 +13,6 @@ namespace ProjetoOficina
 {
     public partial class Inicial : Form
     {
-
         protected static string host = "localhost";
         protected static string database = "db";
         protected static string userId = "root";
@@ -331,6 +330,13 @@ namespace ProjetoOficina
                 TXTatzNome.Clear(); TXTatzCod.Clear(); TXTatzQtd.Clear(); TXTatzBandej.Clear();
                 TXTatzCorred.Clear(); TXTatzPratel.Clear(); TXTatzAplic.Clear(); LBLaplic.Text = "";
             }
+        }
+
+        private void BTNexcluir_Click(object sender, EventArgs e)
+        {
+            Excluir FormExcluir = new Excluir();
+            FormExcluir.Owner = this;
+            FormExcluir.Show();
         }
     }
 }

@@ -54,6 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TXTatzNome = new System.Windows.Forms.TextBox();
             this.LBKajuda = new System.Windows.Forms.LinkLabel();
+            this.BTNexcluir = new System.Windows.Forms.Button();
             this.GRPatualizar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,10 +89,10 @@
             // 
             // BTNsair
             // 
-            this.BTNsair.Location = new System.Drawing.Point(1032, 76);
+            this.BTNsair.Location = new System.Drawing.Point(1032, 105);
             this.BTNsair.Name = "BTNsair";
             this.BTNsair.Size = new System.Drawing.Size(104, 23);
-            this.BTNsair.TabIndex = 3;
+            this.BTNsair.TabIndex = 4;
             this.BTNsair.Text = "Sair";
             this.BTNsair.UseVisualStyleBackColor = true;
             this.BTNsair.Click += new System.EventHandler(this.BTNsair_Click);
@@ -179,7 +180,7 @@
             this.TXTatzQtd.Location = new System.Drawing.Point(6, 142);
             this.TXTatzQtd.Name = "TXTatzQtd";
             this.TXTatzQtd.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzQtd.TabIndex = 6;
+            this.TXTatzQtd.TabIndex = 7;
             // 
             // label2
             // 
@@ -195,7 +196,7 @@
             this.BTNatualizar.Location = new System.Drawing.Point(121, 16);
             this.BTNatualizar.Name = "BTNatualizar";
             this.BTNatualizar.Size = new System.Drawing.Size(152, 27);
-            this.BTNatualizar.TabIndex = 11;
+            this.BTNatualizar.TabIndex = 12;
             this.BTNatualizar.Text = "Atualizar";
             this.BTNatualizar.UseVisualStyleBackColor = true;
             this.BTNatualizar.Click += new System.EventHandler(this.BTNatualizar_Click);
@@ -208,7 +209,7 @@
             this.TXTatzAplic.Name = "TXTatzAplic";
             this.TXTatzAplic.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TXTatzAplic.Size = new System.Drawing.Size(264, 101);
-            this.TXTatzAplic.TabIndex = 10;
+            this.TXTatzAplic.TabIndex = 11;
             // 
             // label1
             // 
@@ -234,7 +235,7 @@
             this.TXTatzPratel.Location = new System.Drawing.Point(9, 277);
             this.TXTatzPratel.Name = "TXTatzPratel";
             this.TXTatzPratel.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzPratel.TabIndex = 9;
+            this.TXTatzPratel.TabIndex = 10;
             // 
             // label4
             // 
@@ -251,7 +252,7 @@
             this.TXTatzCorred.Location = new System.Drawing.Point(6, 232);
             this.TXTatzCorred.Name = "TXTatzCorred";
             this.TXTatzCorred.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzCorred.TabIndex = 22;
+            this.TXTatzCorred.TabIndex = 9;
             // 
             // TXTatzBandej
             // 
@@ -259,7 +260,7 @@
             this.TXTatzBandej.Location = new System.Drawing.Point(6, 187);
             this.TXTatzBandej.Name = "TXTatzBandej";
             this.TXTatzBandej.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzBandej.TabIndex = 7;
+            this.TXTatzBandej.TabIndex = 8;
             // 
             // TXTatzCod
             // 
@@ -267,7 +268,7 @@
             this.TXTatzCod.Location = new System.Drawing.Point(6, 94);
             this.TXTatzCod.Name = "TXTatzCod";
             this.TXTatzCod.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzCod.TabIndex = 5;
+            this.TXTatzCod.TabIndex = 6;
             // 
             // LBLatzNome
             // 
@@ -302,7 +303,7 @@
             this.TXTatzNome.Location = new System.Drawing.Point(6, 49);
             this.TXTatzNome.Name = "TXTatzNome";
             this.TXTatzNome.Size = new System.Drawing.Size(267, 22);
-            this.TXTatzNome.TabIndex = 4;
+            this.TXTatzNome.TabIndex = 5;
             // 
             // LBKajuda
             // 
@@ -310,16 +311,27 @@
             this.LBKajuda.Location = new System.Drawing.Point(1379, 9);
             this.LBKajuda.Name = "LBKajuda";
             this.LBKajuda.Size = new System.Drawing.Size(44, 17);
-            this.LBKajuda.TabIndex = 12;
+            this.LBKajuda.TabIndex = 13;
             this.LBKajuda.TabStop = true;
             this.LBKajuda.Text = "Ajuda";
             this.LBKajuda.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LBKajuda_LinkClicked);
+            // 
+            // BTNexcluir
+            // 
+            this.BTNexcluir.Location = new System.Drawing.Point(1032, 76);
+            this.BTNexcluir.Name = "BTNexcluir";
+            this.BTNexcluir.Size = new System.Drawing.Size(104, 23);
+            this.BTNexcluir.TabIndex = 3;
+            this.BTNexcluir.Text = "Excluir";
+            this.BTNexcluir.UseVisualStyleBackColor = true;
+            this.BTNexcluir.Click += new System.EventHandler(this.BTNexcluir_Click);
             // 
             // Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1435, 833);
+            this.Controls.Add(this.BTNexcluir);
             this.Controls.Add(this.LBKajuda);
             this.Controls.Add(this.GRPatualizar);
             this.Controls.Add(this.LSTestoq);
@@ -373,6 +385,7 @@
         private System.Windows.Forms.TextBox TXTatzQtd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel LBKajuda;
+        private System.Windows.Forms.Button BTNexcluir;
     }
 }
 
